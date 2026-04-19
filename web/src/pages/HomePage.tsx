@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import { homeSections } from "../data/siteContent";
+import HeroCarousel from "../features/hero-carousel/HeroCarousel";
+import QuickLinks from "../features/quick-links/QuickLinks";
 
 function HomePage() {
   return (
     <section>
-      <figure className="page-hero-image">
-        <img
-          src="/images/hero-placeholder.svg"
-          alt="Mortgage strategy hero placeholder"
-        />
-      </figure>
+      <HeroCarousel />
+      <QuickLinks />
 
       {homeSections.map((entry, index) => (
         <article key={entry.id} className="content-section">

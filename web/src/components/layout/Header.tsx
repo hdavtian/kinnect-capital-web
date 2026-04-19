@@ -135,7 +135,12 @@ function Header() {
                     <button
                       type="button"
                       className="nav-group-toggle"
-                      onClick={() => toggleGroup(group.id)}
+                      onClick={(e) => {
+                        toggleGroup(group.id);
+                        // Capture element ref before returning — React nullifies currentTarget after the handler
+                        const btn = e.currentTarget as HTMLElement;
+                        btn.blur();
+                      }}
                       aria-expanded={Boolean(expandedGroups[group.id])}
                     >
                       {group.label}
