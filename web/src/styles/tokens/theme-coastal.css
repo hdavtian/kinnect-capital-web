@@ -1,0 +1,38 @@
+/*
+ * Coastal theme tokens
+ * Deep teal accent, ocean-air surfaces — Pacific/LA inspired
+ */
+
+:root[data-theme="coastal"] {
+  --color-bg: #e8f4f3;
+  --color-bg-accent: #cde5e3;
+  --color-text: #153438;
+  --color-text-muted: #40666a;
+  --color-link: #0e6d7c;
+  --color-surface: #fdfefe;
+  --color-surface-alt: #f1f9f8;
+  --color-border: #cfe1df;
+  --color-border-soft: #e3efee;
+  --color-input-border: #a9c9c6;
+  --color-accent: #0e6d7c;
+  --color-accent-strong: #0b5864;
+  --color-accent-soft: #dff1f3;
+  --color-success-bg: #ecf8f4;
+  --color-success-border: #bfdfd1;
+  --header-top-bg: #0d2e32;
+  --header-top-text: #c8e0e4;
+  --header-top-border: #1a4a50;
+  --header-nav-bg: #0e6d7c;
+  --header-nav-text: #f0fafb;
+  --header-nav-hover: rgba(240, 250, 251, 0.15);
+  --header-nav-border: rgba(240, 250, 251, 0.12);
+  --footer-bg: #0d2e32;
+  --footer-text: #8ab8be;
+  --footer-muted: #406870;
+  --footer-heading: #e8f4f3;
+  --footer-link: #7abdc8;
+  --footer-link-hover: #f0fafb;
+  --footer-bottom-bg: #071e22;
+  --footer-bottom-text: #305860;
+  --footer-bottom-link: #507880;
+}

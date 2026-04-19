@@ -1,0 +1,38 @@
+/*
+ * Investment Green theme tokens
+ * Forest/money green — serious, prosperous, institutional
+ */
+
+:root[data-theme="investment-green"] {
+  --color-bg: #f0f5f1;
+  --color-bg-accent: #daeadc;
+  --color-text: #152418;
+  --color-text-muted: #3d5e42;
+  --color-link: #1a6b2e;
+  --color-surface: #fafcfb;
+  --color-surface-alt: #f2f8f3;
+  --color-border: #c9dece;
+  --color-border-soft: #e0ede2;
+  --color-input-border: #a4c8ab;
+  --color-accent: #1a6b2e;
+  --color-accent-strong: #145524;
+  --color-accent-soft: #dff2e3;
+  --color-success-bg: #edf8f0;
+  --color-success-border: #b8dfc1;
+  --header-top-bg: #0f2914;
+  --header-top-text: #c4dfc8;
+  --header-top-border: #1c4223;
+  --header-nav-bg: #1a6b2e;
+  --header-nav-text: #f0faf2;
+  --header-nav-hover: rgba(240, 250, 242, 0.15);
+  --header-nav-border: rgba(240, 250, 242, 0.12);
+  --footer-bg: #0f2914;
+  --footer-text: #84b88d;
+  --footer-muted: #3d5e42;
+  --footer-heading: #f0f5f1;
+  --footer-link: #78ba83;
+  --footer-link-hover: #f0faf2;
+  --footer-bottom-bg: #081910;
+  --footer-bottom-text: #2e4d33;
+  --footer-bottom-link: #4d7a55;
+}

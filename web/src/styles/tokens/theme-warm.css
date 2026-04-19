@@ -1,0 +1,38 @@
+/*
+ * Warm theme tokens
+ * Earthy terracotta palette — rust accent, warm ivory surfaces
+ */
+
+:root[data-theme="warm"] {
+  --color-bg: #f7efe7;
+  --color-bg-accent: #efd9c5;
+  --color-text: #2c231d;
+  --color-text-muted: #6a574a;
+  --color-link: #9a4f2f;
+  --color-surface: #fffdf9;
+  --color-surface-alt: #fff7ef;
+  --color-border: #e8d8c8;
+  --color-border-soft: #f1e6da;
+  --color-input-border: #d6bea7;
+  --color-accent: #9a4f2f;
+  --color-accent-strong: #7c3f24;
+  --color-accent-soft: #f9e7dc;
+  --color-success-bg: #f7f4eb;
+  --color-success-border: #ddd3bf;
+  --header-top-bg: #2c1a0e;
+  --header-top-text: #f0e6da;
+  --header-top-border: #4a2e1e;
+  --header-nav-bg: #9a4f2f;
+  --header-nav-text: #fff8f2;
+  --header-nav-hover: rgba(255, 248, 242, 0.15);
+  --header-nav-border: rgba(255, 248, 242, 0.12);
+  --footer-bg: #2c1a0e;
+  --footer-text: #d4c0b0;
+  --footer-muted: #8a6a55;
+  --footer-heading: #f7efe7;
+  --footer-link: #d4a882;
+  --footer-link-hover: #fff8f2;
+  --footer-bottom-bg: #1e1008;
+  --footer-bottom-text: #6a4e3a;
+  --footer-bottom-link: #a07a60;
+}

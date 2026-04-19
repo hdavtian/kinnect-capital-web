@@ -1,0 +1,40 @@
+/*
+ * USC theme tokens
+ * Official USC colors: Cardinal #990000 + Gold #FFCC00
+ * Font: EB Garamond — closest free equivalent to Adobe Caslon Pro
+ */
+
+:root[data-theme="usc-subtle"] {
+  --font-sans: "EB Garamond", Georgia, serif;
+  --color-bg: #f5f1eb;
+  --color-bg-accent: #ede6d8;
+  --color-text: #1e1710;
+  --color-text-muted: #5c4a38;
+  --color-link: #990000;
+  --color-surface: #fffdf8;
+  --color-surface-alt: #f8f2e8;
+  --color-border: #ddd0be;
+  --color-border-soft: #ece5d5;
+  --color-input-border: #c8b89a;
+  --color-accent: #990000;
+  --color-accent-strong: #7a0000;
+  --color-accent-soft: #fff3cc;
+  --color-success-bg: #f8f5e0;
+  --color-success-border: #e8d87a;
+  --header-top-bg: #1a0000;
+  --header-top-text: #f5e6c8;
+  --header-top-border: #3d0000;
+  --header-nav-bg: #990000;
+  --header-nav-text: #fff8e1;
+  --header-nav-hover: rgba(255, 204, 0, 0.2);
+  --header-nav-border: rgba(255, 204, 0, 0.15);
+  --footer-bg: #1a0000;
+  --footer-text: #c4a882;
+  --footer-muted: #7a5840;
+  --footer-heading: #ffcc00;
+  --footer-link: #d4a843;
+  --footer-link-hover: #ffcc00;
+  --footer-bottom-bg: #110000;
+  --footer-bottom-text: #6a3838;
+  --footer-bottom-link: #9a6040;
+}

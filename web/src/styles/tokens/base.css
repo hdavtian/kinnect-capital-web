@@ -1,0 +1,63 @@
+/*
+ * Base design tokens — Classic theme (default)
+ * These are the fallback values used when no data-theme attribute is set.
+ * Each alternate theme file overrides only the values it changes.
+ */
+
+:root {
+  --font-sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Page palette */
+  --color-bg: #eef3f8;
+  --color-bg-accent: #dde9f4;
+  --color-text: #1a2430;
+  --color-text-muted: #4e5f73;
+  --color-link: #0f5aa6;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f9fbfd;
+  --color-border: #dbe3ea;
+  --color-border-soft: #edf2f7;
+  --color-input-border: #bfd1df;
+  --color-accent: #0f5aa6;
+  --color-accent-strong: #0c4c8a;
+  --color-accent-soft: #edf4fc;
+  --color-success-bg: #f1faf5;
+  --color-success-border: #c8e2d2;
+
+  /* Header bands */
+  --header-top-bg: #1a2430;
+  --header-top-text: #e8edf2;
+  --header-top-border: #2e3d50;
+  --header-nav-bg: #0f5aa6;
+  --header-nav-text: #ffffff;
+  --header-nav-hover: rgba(255, 255, 255, 0.15);
+  --header-nav-border: rgba(255, 255, 255, 0.12);
+
+  /* Footer bands */
+  --footer-bg: #1a2430;
+  --footer-text: #c8d4df;
+  --footer-muted: #7a8fa3;
+  --footer-heading: #ffffff;
+  --footer-link: #a8c4e0;
+  --footer-link-hover: #ffffff;
+  --footer-bottom-bg: #0f1820;
+  --footer-bottom-text: #5a7080;
+  --footer-bottom-link: #7a9ab5;
+
+  /* Shared */
+  --shadow-soft: 0 10px 30px rgba(16, 43, 73, 0.08);
+  --radius-card: 0.6rem;
+  --radius-pill: 999px;
+  --radius-button: 0;
+  --inner-max-width: 1500px;
+
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
