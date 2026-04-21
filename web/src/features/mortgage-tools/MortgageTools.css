@@ -8,6 +8,20 @@
   width: min(100%, var(--inner-max-width));
   margin: 0 auto;
   padding: 0 2rem;
+  font-size: clamp(0.97rem, 0.94rem + 0.16vw, 1.03rem);
+  line-height: 1.62;
+  color: var(--color-text);
+}
+
+.tools-hub-heading h1,
+.tool-page-header h1 {
+  color: var(--color-accent);
+  line-height: 1.18;
+}
+
+.tools-hub-heading > p,
+.tool-page-header > p {
+  color: var(--color-text-muted);
 }
 
 .tool-page-section {
@@ -261,6 +275,7 @@
   gap: 0.3rem;
   font-size: var(--tool-label-size);
   font-weight: 600;
+  color: var(--color-text);
 }
 
 .tool-field input {
@@ -291,6 +306,7 @@
 .tool-related h3,
 .tool-cta-block h3 {
   margin-top: 0;
+  color: var(--color-accent);
 }
 
 .tool-kpis {
@@ -321,6 +337,12 @@
   gap: 0.2rem;
 }
 
+.tool-kpis li strong,
+.tool-table td,
+.tool-rate-input {
+  color: var(--color-text);
+}
+
 .tool-kpis small {
   font-size: 0.74rem;
 }
@@ -337,6 +359,11 @@
   border: 1px solid var(--color-border-soft);
   padding: 0.52rem;
   text-align: left;
+}
+
+.tool-table th {
+  color: color-mix(in srgb, var(--color-accent) 78%, var(--color-text) 22%);
+  font-weight: 700;
 }
 
 .tool-rate-input {

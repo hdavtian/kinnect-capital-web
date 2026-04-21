@@ -1,3 +1,10 @@
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { SiZillow } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { footerContent } from "../../data/footer";
 import { ROUTES } from "../../routes";
@@ -46,6 +53,55 @@ function Footer() {
                 {line}
               </span>
             ))}
+
+            <div
+              className="footer-social"
+              aria-label="Social and contact links"
+            >
+              <a
+                className="footer-social-link"
+                href="https://www.linkedin.com/in/arthur-kumasian-00936726/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn aria-hidden="true" />
+              </a>
+              <a
+                className="footer-social-link"
+                href="https://www.zillow.com/profile/Arthur%20Kumasian"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Zillow"
+              >
+                <SiZillow aria-hidden="true" />
+              </a>
+              <a
+                className="footer-social-link"
+                href="https://www.facebook.com/kinnectcapital/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebookF aria-hidden="true" />
+              </a>
+              <a
+                className="footer-social-link"
+                href="https://www.instagram.com/kinnectcapital/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram aria-hidden="true" />
+              </a>
+              <a
+                className="footer-social-link"
+                href="mailto:arthur@kinnectcapital.com"
+                aria-label="Email Arthur Kumasian"
+              >
+                <FaEnvelope aria-hidden="true" />
+              </a>
+            </div>
           </div>
 
           {/* Col 2 — Company */}

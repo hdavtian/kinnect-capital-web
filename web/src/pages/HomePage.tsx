@@ -16,7 +16,11 @@ function HomePage() {
             className={`content-section home-feature home-feature--${entry.id}`}
           >
             <div className="home-feature__inner">
-              {index === 0 ? <h1>{entry.heading}</h1> : <h2>{entry.heading}</h2>}
+              {index === 0 ? (
+                <h1>{entry.heading}</h1>
+              ) : (
+                <h2>{entry.heading}</h2>
+              )}
               {entry.subheading ? (
                 <p className="home-feature__subheading">{entry.subheading}</p>
               ) : null}
