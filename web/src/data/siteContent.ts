@@ -69,9 +69,9 @@ export const teamIntroSections: PageSection[] = [
     id: "team-arthur",
     heading: "Meet Arthur",
     body: [
-      "Arthur Kumasian is a principal and broker with more than 20 years of experience in mortgage lending.",
-      "Born and raised in Los Angeles and an alumnus of the University of Southern California, Arthur specializes in high-net-worth and business-owner lending scenarios.",
-      "As a business owner himself, he understands the nuances of entrepreneurial income and structures each transaction with a solution-focused approach.",
+      "Arthur Kumasian is a principal and broker with more than 20 years of experience in mortgage lending. Born and raised in Los Angeles and an alumnus of the University of Southern California, Arthur has established himself as an expert in servicing the high-line mortgage business with a track record of success and solution proficiency.",
+      "Arthur specializes in working with high-net-worth borrowers and business owners, and provides customized experiences as a niche agent to this exclusive clientele. A business owner and entrepreneur himself, he understands the unique financial circumstances of his clients and expertly negotiates and closes complex transactions in today's changing lending landscape. This distinctive approach sets him apart as the premier mortgage broker to business owners.",
+      "In his free time, Arthur can be found cheering for the USC Trojans at the L.A. Memorial Coliseum and enjoying Los Angeles' art, music, and dining offerings with his family and friends. He also loves spending quality time with his sidekick, his Labrador Retriever, Brody.",
     ],
   },
 ];

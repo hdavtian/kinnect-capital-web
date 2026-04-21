@@ -1,0 +1,79 @@
+[
+  {
+    "id": "bank-statement",
+    "title": "Bank Statement Loan",
+    "tagline": "Most common mortgage solution for the self-employed borrower.",
+    "bullets": [
+      "12 or 24 months bank statements",
+      "No tax returns required",
+      "15/30/40 year fixed options"
+    ],
+    "imagePath": "/images/info-graphics/250x250/bank-statement-loan.png"
+  },
+  {
+    "id": "profit-loss",
+    "title": "Profit & Loss Loan (P&L Only)",
+    "tagline": "Uses CPA prepared P&L statements for qualification.",
+    "bullets": [
+      "1 or 2 year CPA P&L",
+      "No tax returns required",
+      "30 year fixed options"
+    ],
+    "imagePath": "/images/info-graphics/250x250/profit-loss-loan.png"
+  },
+  {
+    "id": "asset-based",
+    "title": "Asset Based Loan",
+    "tagline": "Qualify using eligible assets instead of employment income.",
+    "bullets": [
+      "Investment accounts",
+      "Money market and deposits",
+      "Retirement accounts"
+    ],
+    "imagePath": "/images/info-graphics/250x250/asset-based-loan.png"
+  },
+  {
+    "id": "dscr",
+    "title": "DSCR Loan",
+    "tagline": "Investment property financing based on property cash flow.",
+    "bullets": [
+      "Cash-flow qualification",
+      "30 year fixed options",
+      "Purchase, refinance or cash-out"
+    ],
+    "imagePath": "/images/info-graphics/250x250/dscr-loan.png"
+  },
+  {
+    "id": "heloan",
+    "title": "HELOAN 2nd Mortgage",
+    "tagline": "Access equity while preserving the low-rate first mortgage.",
+    "bullets": [
+      "Cash-out flexibility",
+      "Debt consolidation support",
+      "Home improvement use cases"
+    ],
+    "imagePath": "/images/info-graphics/250x250/heloan.png"
+  },
+  {
+    "id": "heloc",
+    "title": "Home Equity Line of Credit (HELOC)",
+    "tagline": "Revolving line of credit secured by home equity.",
+    "bullets": [
+      "Renovations",
+      "Tuition and large expenses",
+      "Debt consolidation"
+    ],
+    "imagePath": "/images/info-graphics/250x250/heloc.png"
+  },
+  {
+    "id": "private-money",
+    "title": "Private Money Loans",
+    "tagline": "Short term lending with faster approvals and funding.",
+    "bullets": [
+      "Fast closing timelines",
+      "Flexible underwriting",
+      "Typical terms: 12-24 months"
+    ],
+    "imagePath": "/images/info-graphics/250x250/private-money-loan.png"
+  }
+]

@@ -1,0 +1,71 @@
+.team-testimonials {
+  margin-top: 1.4rem;
+}
+
+.team-testimonials__header h2 {
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.team-testimonials__header p {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.team-testimonials__grid {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.team-testimonial-card {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid color-mix(in srgb, var(--color-accent) 72%, white 28%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-surface-alt) 66%, var(--color-surface) 34%)
+      0%,
+    var(--color-surface) 100%
+  );
+  padding: 0.75rem 0.85rem;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.team-testimonial-card__quote {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.team-testimonial-card__name {
+  margin: 0.2rem 0 0;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.team-testimonial-card__attribution {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.team-testimonial-card__note {
+  margin: 0.2rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+}
+
+@media (max-width: 900px) {
+  .team-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}

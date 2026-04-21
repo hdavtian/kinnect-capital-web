@@ -12,13 +12,17 @@ function Footer() {
         <div className="inner-wrap footer-body-inner">
           {/* Col 1 — Brand + contact */}
           <div className="footer-brand footer-col">
-            <div className="logo-mark" aria-hidden="true">
-              KC
+            <div className="footer-brand-lockup">
+              <div className="logo-mark" aria-hidden="true">
+                KC
+              </div>
+              <div className="footer-brand-text-wrap">
+                <p className="footer-brand-name">Kinnect Capital</p>
+                <p className="footer-brand-tagline">
+                  Residential Mortgage Brokerage
+                </p>
+              </div>
             </div>
-            <p className="footer-brand-name">Kinnect Capital</p>
-            <p className="footer-brand-tagline">
-              Residential Mortgage Brokerage
-            </p>
             <a
               className="footer-contact-item"
               href={`tel:${footerContent.officePhone.replace(/\D/g, "")}`}

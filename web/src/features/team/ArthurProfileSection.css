@@ -1,0 +1,73 @@
+.team-arthur-profile {
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-surface-alt) 62%, var(--color-surface) 38%)
+      0%,
+    var(--color-surface) 100%
+  );
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.team-arthur-profile__media {
+  background: color-mix(
+    in srgb,
+    var(--color-accent-soft) 60%,
+    var(--color-surface) 40%
+  );
+  border-right: 1px solid var(--color-border-soft);
+  padding: 0.75rem;
+  display: grid;
+  place-items: center;
+}
+
+.team-arthur-profile__media img {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  object-position: top right;
+  display: block;
+  border: 1px solid var(--color-border);
+}
+
+.team-arthur-profile__content {
+  padding: 1.1rem 1.2rem;
+}
+
+.team-arthur-profile__content h1 {
+  margin: 0;
+  color: var(--color-accent);
+  line-height: 1.15;
+}
+
+.team-arthur-profile__content p {
+  margin: 0.75rem 0 0;
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.team-arthur-profile__name {
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+@media (max-width: 930px) {
+  .team-arthur-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .team-arthur-profile__media {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+
+  .team-arthur-profile__media img {
+    max-width: 260px;
+    aspect-ratio: 1 / 1;
+  }
+}
