@@ -181,6 +181,8 @@ function MaskedInput({
 // ─────────────────────────────────────────────────────────────────────────────
 
 function MortgageCalculator() {
+  const headerImageSrc = "/images/calculators/headers/mortgage-calculator.png";
+
   const [values, setValues] = useState<CalculatorValues>(DEFAULT_VALUES);
 
   const breakdown = useMemo(() => getBreakdown(values), [values]);
@@ -272,6 +274,13 @@ function MortgageCalculator() {
     <section className="calculator-section">
       <h1>Mortgage Calculator</h1>
       <p>Adjust values below to estimate your monthly payment.</p>
+
+      <div
+        className="calculator-page-hero"
+        style={{ backgroundImage: `url(${headerImageSrc})` }}
+        role="img"
+        aria-label="Mortgage calculator infographic header"
+      />
 
       <div className="calculator-grid">
         <form

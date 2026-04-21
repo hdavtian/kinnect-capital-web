@@ -48,11 +48,61 @@ export const topNav: NavGroup[] = [
     href: null,
     children: [
       {
+        id: "tools-hub",
+        label: "Mortgage Tools Hub",
+        href: ROUTES.toolsHub,
+      },
+      {
         id: "calculator",
         label: "Mortgage Calculator",
         href: ROUTES.calculator,
       },
       { id: "valuation", label: "Home Valuation", href: ROUTES.valuation },
+      {
+        id: "term-comparison",
+        label: "Loan Term Comparison",
+        href: ROUTES.termComparison,
+      },
+      {
+        id: "refi-breakeven",
+        label: "Refinance Break-Even",
+        href: ROUTES.refinanceBreakeven,
+      },
+      {
+        id: "cashout-vs-heloc-heloan",
+        label: "Cash-Out vs HELOC vs HELOAN",
+        href: ROUTES.cashOutVsHelocHeloan,
+      },
+      {
+        id: "arm-vs-fixed",
+        label: "ARM vs Fixed",
+        href: ROUTES.armVsFixed,
+      },
+      {
+        id: "self-employed-affordability",
+        label: "Self-Employed Affordability",
+        href: ROUTES.selfEmployedAffordability,
+      },
+      {
+        id: "dscr",
+        label: "DSCR Calculator",
+        href: ROUTES.dscr,
+      },
+      {
+        id: "debt-consolidation",
+        label: "Debt Consolidation Savings",
+        href: ROUTES.debtConsolidationSavings,
+      },
+      {
+        id: "rate-buydown",
+        label: "Rate Buydown",
+        href: ROUTES.rateBuydown,
+      },
+      {
+        id: "rent-vs-buy",
+        label: "Rent vs Buy",
+        href: ROUTES.rentVsBuy,
+      },
     ],
   },
 ];
