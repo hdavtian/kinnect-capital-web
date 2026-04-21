@@ -578,14 +578,6 @@ h2 {
   background-position: center center;
 }
 
-.about-page-hero--top {
-  background-image: url("/images/calculators/new/about-top-b.png");
-}
-
-.about-page-hero--bottom {
-  background-image: url("/images/calculators/new/about-bottom-b.png");
-}
-
 .about-page > h1 {
   color: var(--color-accent);
 }

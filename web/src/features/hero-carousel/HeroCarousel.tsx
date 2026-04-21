@@ -4,6 +4,7 @@ import SliderPkg from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import heroData from "../../data/heroSlides.json";
+import { assetPath } from "../../utils/assetPath";
 import "./HeroCarousel.css";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Slider = ((SliderPkg as any).default ?? SliderPkg) as typeof SliderPkg;
@@ -150,7 +151,7 @@ function HeroCarousel() {
             {/* Row 2: Image background with content overlay */}
             <div
               className="hero-slide-body"
-              style={{ backgroundImage: `url(${slide.imagePath})` }}
+              style={{ backgroundImage: `url(${assetPath(slide.imagePath)})` }}
             >
               <div className="hero-slide-overlay">
                 <p className="hero-slide-content">{slide.mainContent}</p>

@@ -1,4 +1,5 @@
 import { aboutSections } from "../data/siteContent";
+import { assetPath } from "../utils/assetPath";
 
 function AboutPage() {
   return (
@@ -7,6 +8,7 @@ function AboutPage() {
       <figure className="page-hero-image about-page-hero-frame">
         <div
           className="about-page-hero about-page-hero--top"
+          style={{ backgroundImage: `url(${assetPath("/images/calculators/new/about-top-b.png")})` }}
           role="img"
           aria-label="About Kinnect Capital visual"
         />
@@ -33,6 +35,7 @@ function AboutPage() {
       <figure className="page-hero-image about-page-hero-frame about-page-hero-frame--bottom">
         <div
           className="about-page-hero about-page-hero--bottom"
+          style={{ backgroundImage: `url(${assetPath("/images/calculators/new/about-bottom-b.png")})` }}
           role="img"
           aria-label="Kinnect Capital team and lending landscape visual"
         />

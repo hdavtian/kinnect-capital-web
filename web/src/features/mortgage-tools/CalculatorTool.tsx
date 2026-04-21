@@ -10,6 +10,7 @@ import {
   round,
   totalMortgageInterest,
 } from "../../utils/calculators";
+import { assetPath } from "../../utils/assetPath";
 import "./MortgageTools.css";
 
 const TERM_OPTIONS = [10, 15, 20, 25, 30] as const;
@@ -1702,7 +1703,7 @@ function CalculatorTool({ toolId }: CalculatorToolProps) {
       {tool.headerImageSrc ? (
         <div
           className="tool-page-hero"
-          style={{ backgroundImage: `url(${tool.headerImageSrc})` }}
+          style={{ backgroundImage: `url(${assetPath(tool.headerImageSrc)})` }}
           role="img"
           aria-label={tool.headerImageAlt ?? `${tool.title} infographic`}
         />

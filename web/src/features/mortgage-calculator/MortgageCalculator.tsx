@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { assetPath } from "../../utils/assetPath";
 
 type TermYears = 10 | 15 | 20 | 25 | 30;
 
@@ -181,7 +182,9 @@ function MaskedInput({
 // ─────────────────────────────────────────────────────────────────────────────
 
 function MortgageCalculator() {
-  const headerImageSrc = "/images/calculators/headers/mortgage-calculator.png";
+  const headerImageSrc = assetPath(
+    "/images/calculators/headers/mortgage-calculator.png",
+  );
 
   const [values, setValues] = useState<CalculatorValues>(DEFAULT_VALUES);
 

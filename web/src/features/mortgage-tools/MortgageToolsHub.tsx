@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { mortgageTools } from "../../data/mortgageTools";
+import { assetPath } from "../../utils/assetPath";
 import "./MortgageTools.css";
 
 function MortgageToolsHub() {
@@ -20,7 +21,9 @@ function MortgageToolsHub() {
             key={tool.id}
             className="tool-card"
             style={
-              { "--tool-card-image": `url(${tool.imageSrc})` } as CSSProperties
+              {
+                "--tool-card-image": `url(${assetPath(tool.imageSrc)})`,
+              } as CSSProperties
             }
             aria-label={tool.imageAlt}
           >

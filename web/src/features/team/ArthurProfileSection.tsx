@@ -1,4 +1,5 @@
 import "./ArthurProfileSection.css";
+import { assetPath } from "../../utils/assetPath";
 
 interface ArthurProfileSectionProps {
   heading: string;
@@ -13,7 +14,7 @@ function ArthurProfileSection({ heading, body }: ArthurProfileSectionProps) {
     <article className="team-arthur-profile">
       <div className="team-arthur-profile__media">
         <img
-          src="/images/ak/arthur-kumas.avif"
+          src={assetPath("/images/ak/arthur-kumas.avif")}
           alt="Arthur Kumasian"
           loading="lazy"
         />

@@ -1,3 +1,5 @@
+import { assetPath } from "../../utils/assetPath";
+
 export interface ResidentialOptionItem {
   id: string;
   title: string;
@@ -15,7 +17,7 @@ function ResidentialOptionCard({ item }: ResidentialOptionCardProps) {
     <article className="residential-option-card">
       <div className="residential-option-card__media">
         <img
-          src={item.imagePath}
+          src={assetPath(item.imagePath)}
           alt={`${item.title} infographic`}
           loading="lazy"
         />
