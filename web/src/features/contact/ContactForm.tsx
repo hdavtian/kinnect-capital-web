@@ -74,56 +74,66 @@ function ContactForm() {
   return (
     <form className="contact-form" onSubmit={onSubmit}>
       <div className="contact-form-grid">
-        <label className="contact-label">
-          Full Name
-          <input
-            type="text"
-            value={formState.fullName}
-            onChange={(event) =>
-              setFormState((prev) => ({
-                ...prev,
-                fullName: event.target.value,
-              }))
-            }
-            required
-          />
-        </label>
+        <div className="contact-form-fields">
+          <label className="contact-label">
+            Full Name
+            <input
+              type="text"
+              value={formState.fullName}
+              onChange={(event) =>
+                setFormState((prev) => ({
+                  ...prev,
+                  fullName: event.target.value,
+                }))
+              }
+              required
+            />
+          </label>
 
-        <label className="contact-label">
-          Phone Number
-          <input
-            type="tel"
-            value={formState.phone}
-            onChange={(event) =>
-              setFormState((prev) => ({ ...prev, phone: event.target.value }))
-            }
-            required
-          />
-        </label>
+          <label className="contact-label">
+            Phone Number
+            <input
+              type="tel"
+              value={formState.phone}
+              onChange={(event) =>
+                setFormState((prev) => ({
+                  ...prev,
+                  phone: event.target.value,
+                }))
+              }
+              required
+            />
+          </label>
 
-        <label className="contact-label">
-          Email Address
-          <input
-            type="email"
-            value={formState.email}
-            onChange={(event) =>
-              setFormState((prev) => ({ ...prev, email: event.target.value }))
-            }
-            required
-          />
-        </label>
+          <label className="contact-label">
+            Email Address
+            <input
+              type="email"
+              value={formState.email}
+              onChange={(event) =>
+                setFormState((prev) => ({ ...prev, email: event.target.value }))
+              }
+              required
+            />
+          </label>
+        </div>
 
-        <label className="contact-label contact-message-field">
-          Message
-          <textarea
-            value={formState.message}
-            onChange={(event) =>
-              setFormState((prev) => ({ ...prev, message: event.target.value }))
-            }
-            rows={5}
-            required
-          />
-        </label>
+        <div className="contact-form-message">
+          <label className="contact-label contact-message-field">
+            Message
+            <textarea
+              value={formState.message}
+              onChange={(event) =>
+                setFormState((prev) => ({
+                  ...prev,
+                  message: event.target.value,
+                }))
+              }
+              rows={7}
+              required
+            />
+          </label>
+        </div>
       </div>
 
       <label className="consent-checkbox">

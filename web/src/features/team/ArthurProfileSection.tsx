@@ -1,5 +1,5 @@
-import "./ArthurProfileSection.css";
 import { assetPath } from "../../utils/assetPath";
+import "./ArthurProfileSection.css";
 
 interface ArthurProfileSectionProps {
   heading: string;

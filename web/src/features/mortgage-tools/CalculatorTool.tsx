@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { findToolById, type ToolId } from "../../data/mortgageTools";
 import { ROUTES } from "../../routes";
+import { assetPath } from "../../utils/assetPath";
 import {
   calculateMortgagePayment,
   clamp,
@@ -10,7 +11,6 @@ import {
   round,
   totalMortgageInterest,
 } from "../../utils/calculators";
-import { assetPath } from "../../utils/assetPath";
 import "./MortgageTools.css";
 
 const TERM_OPTIONS = [10, 15, 20, 25, 30] as const;
