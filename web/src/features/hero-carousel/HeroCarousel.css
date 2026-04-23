@@ -73,7 +73,7 @@
 
 /* Row 2 — image / content band */
 .hero-slide-body {
-  height: 480px;
+  height: 600px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -139,11 +139,11 @@
 
 .hero-arrow {
   position: absolute;
-  bottom: 240px; /* half of 480px body row — centers in the image band */
+  bottom: 300px; /* half of 600px body row — centers in the image band */
   transform: translateY(50%);
   z-index: 10;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
   color: #fff;
   border-radius: var(--radius-button);
   width: 2.6rem;
@@ -160,8 +160,8 @@
 }
 
 .hero-arrow:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 72%, white);
+  border-color: color-mix(in srgb, var(--color-accent) 72%, white);
 }
 
 .hero-arrow--prev {
@@ -271,7 +271,7 @@
 
 .hero-autoplay-toggle {
   position: absolute;
-  bottom: calc(480px - 2.25rem);
+  bottom: calc(600px - 2.25rem);
   right: 0.75rem;
   z-index: 20;
   display: flex;

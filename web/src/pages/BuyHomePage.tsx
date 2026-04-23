@@ -1,37 +1,60 @@
 import { Link } from "react-router-dom";
+import ResourcesSidebarNav from "../components/layout/ResourcesSidebarNav";
 import { buyHomeSections } from "../data/siteContent";
 import { assetPath } from "../utils/assetPath";
 
 function BuyHomePage() {
+  const [overviewSection, ...additionalSections] = buyHomeSections;
+
   return (
     <section className="content-page buy-home-page">
-      <figure className="page-hero-image content-page-hero-frame">
-        <div
-          className="content-page-hero"
-          style={{
-            backgroundImage: `url(${assetPath("/images/calculators/new/about-top-b.png")})`,
-          }}
-          role="img"
-          aria-label="Buy a home planning visual placeholder"
-        />
-      </figure>
+      <div className="tools-page-layout">
+        <ResourcesSidebarNav />
+        <div className="tools-page-content">
+          {overviewSection ? <h1>{overviewSection.heading}</h1> : null}
 
-      {buyHomeSections.map((entry, index) => (
-        <article
-          key={entry.id}
-          className="content-section content-page-section"
-        >
-          {index === 0 ? <h1>{entry.heading}</h1> : <h2>{entry.heading}</h2>}
-          {entry.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-          {entry.cta ? (
-            <Link className="content-page-link" to={entry.cta.href}>
-              {entry.cta.label}
-            </Link>
+          <figure className="page-hero-image content-page-hero-frame">
+            <div
+              className="content-page-hero"
+              style={{
+                backgroundImage: `url(${assetPath("/images/home.png")})`,
+              }}
+              role="img"
+              aria-label="Buy a home planning visual placeholder"
+            />
+          </figure>
+
+          {overviewSection ? (
+            <article className="content-section content-page-section">
+              {overviewSection.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {overviewSection.cta ? (
+                <Link className="content-page-link" to={overviewSection.cta.href}>
+                  {overviewSection.cta.label}
+                </Link>
+              ) : null}
+            </article>
           ) : null}
-        </article>
-      ))}
+
+          {additionalSections.map((entry) => (
+            <article
+              key={entry.id}
+              className="content-section content-page-section"
+            >
+              <h2>{entry.heading}</h2>
+              {entry.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {entry.cta ? (
+                <Link className="content-page-link" to={entry.cta.href}>
+                  {entry.cta.label}
+                </Link>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

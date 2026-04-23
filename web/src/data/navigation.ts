@@ -57,7 +57,6 @@ export const topNav: NavGroup[] = [
         label: "Mortgage Calculator",
         href: ROUTES.calculator,
       },
-      { id: "valuation", label: "Home Valuation", href: ROUTES.valuation },
       {
         id: "term-comparison",
         label: "Loan Term Comparison",
@@ -103,6 +102,7 @@ export const topNav: NavGroup[] = [
         label: "Rent vs Buy",
         href: ROUTES.rentVsBuy,
       },
+      { id: "valuation", label: "Home Valuation", href: ROUTES.valuation },
     ],
   },
 ];

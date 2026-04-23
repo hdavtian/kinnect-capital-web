@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { contactCta, topNav } from "../../data/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,6 +16,7 @@ type ThemeName =
 const THEME_STORAGE_KEY = "kinnect-theme";
 
 function Header() {
+  const location = useLocation();
   const [theme, setTheme] = useState<ThemeName>(() => {
     const stored = localStorage.getItem(THEME_STORAGE_KEY);
     if (
@@ -72,6 +73,15 @@ function Header() {
     requestAnimationFrame(() => {
       (document.activeElement as HTMLElement)?.blur();
     });
+  }
+
+  function normalizePath(path: string): string {
+    const normalized = path.replace(/\/+$/, "");
+    return normalized || "/";
+  }
+
+  function isCurrentPath(href: string): boolean {
+    return normalizePath(location.pathname) === normalizePath(href);
   }
 
   return (
@@ -134,7 +144,7 @@ function Header() {
                   {group.children.length > 0 ? (
                     <button
                       type="button"
-                      className="nav-group-toggle"
+                      className={`nav-group-toggle${group.children.some((child) => isCurrentPath(child.href)) ? " is-current" : ""}`}
                       onClick={(e) => {
                         toggleGroup(group.id);
                         // Capture element ref before returning — React nullifies currentTarget after the handler
@@ -149,13 +159,16 @@ function Header() {
                       </span>
                     </button>
                   ) : group.href ? (
-                    <Link
+                    <NavLink
                       to={group.href}
-                      className="nav-top-link"
+                      end={group.href === "/"}
+                      className={({ isActive }) =>
+                        `nav-top-link${isActive ? " is-current" : ""}`
+                      }
                       onClick={handleChildClick}
                     >
                       {group.label}
-                    </Link>
+                    </NavLink>
                   ) : (
                     <span>{group.label}</span>
                   )}
@@ -166,9 +179,16 @@ function Header() {
                     >
                       {group.children.map((child) => (
                         <li key={child.id}>
-                          <Link to={child.href} onClick={handleChildClick}>
+                          <NavLink
+                            to={child.href}
+                            end
+                            className={({ isActive }) =>
+                              isActive ? "is-current" : ""
+                            }
+                            onClick={handleChildClick}
+                          >
                             {child.label}
-                          </Link>
+                          </NavLink>
                         </li>
                       ))}
                     </ul>
