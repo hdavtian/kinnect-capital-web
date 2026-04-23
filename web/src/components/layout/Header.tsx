@@ -1,59 +1,14 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { contactCta, topNav } from "../../data/navigation";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type ThemeName =
-  | "classic"
-  | "usc-subtle"
-  | "warm"
-  | "coastal"
-  | "investment-green";
-
-const THEME_STORAGE_KEY = "kinnect-theme";
-
 function Header() {
   const location = useLocation();
-  const [theme, setTheme] = useState<ThemeName>(() => {
-    const stored = localStorage.getItem(THEME_STORAGE_KEY);
-    if (
-      stored === "warm" ||
-      stored === "coastal" ||
-      stored === "classic" ||
-      stored === "usc-subtle" ||
-      stored === "investment-green"
-    ) {
-      return stored;
-    }
-
-    return "classic";
-  });
+  const visibleTopNav = topNav.filter((group) => group.id !== "home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(
     {},
   );
-  const headerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-  }, [theme]);
-
-  useEffect(() => {
-    const el = headerRef.current;
-    if (!el) return;
-    const trigger = ScrollTrigger.create({
-      trigger: document.body,
-      start: "top top-=40px",
-      end: "max",
-      onEnter: () => el.classList.add("site-header--scrolled"),
-      onLeaveBack: () => el.classList.remove("site-header--scrolled"),
-    });
-    return () => trigger.kill();
-  }, []);
 
   function toggleGroup(groupId: string) {
     setExpandedGroups((prev) => ({
@@ -85,8 +40,7 @@ function Header() {
   }
 
   return (
-    <header ref={headerRef} className="site-header">
-      {/* ── Band 1: Identity / Brand ── */}
+    <header className="site-header">
       <div className="header-top">
         <div className="inner-wrap header-top-inner">
           <div className="brand">
@@ -101,28 +55,6 @@ function Header() {
             </Link>
           </div>
 
-          <div className="header-top-actions">
-            <label className="theme-select-wrap">
-              <span>Theme</span>
-              <select
-                className="theme-select"
-                value={theme}
-                onChange={(event) => setTheme(event.target.value as ThemeName)}
-              >
-                <option value="classic">Classic</option>
-                <option value="usc-subtle">USC Subtle</option>
-                <option value="warm">Warm</option>
-                <option value="coastal">Coastal</option>
-                <option value="investment-green">Investment Green</option>
-              </select>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Band 2: Navigation ── */}
-      <div className="header-nav">
-        <div className="inner-wrap header-nav-inner">
           <button
             type="button"
             className="mobile-menu-button"
@@ -139,7 +71,7 @@ function Header() {
             aria-label="Primary"
           >
             <ul className="nav-list">
-              {topNav.map((group) => (
+              {visibleTopNav.map((group) => (
                 <li key={group.id} className="nav-group-item">
                   {group.children.length > 0 ? (
                     <button
