@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import ToolsSidebarNav from "../mortgage-tools/ToolsSidebarNav";
 import { ROUTES } from "../../routes";
 
 interface ContactState {
@@ -272,23 +273,26 @@ function HomeValuationWizard() {
 
   return (
     <section className="valuation-section">
-      <h1>Home Valuation</h1>
-      <p>Get your estimated property value in three quick steps.</p>
+      <div className="tools-page-layout">
+        <ToolsSidebarNav />
+        <div className="tools-page-content">
+          <h1>Home Valuation</h1>
+          <p>Get your estimated property value in three quick steps.</p>
 
-      <div className="valuation-steps" aria-label="Valuation progress">
-        <div className={`step-pill ${currentStep === 1 ? "active" : ""}`}>
-          1
-        </div>
-        <div className={`step-pill ${currentStep === 2 ? "active" : ""}`}>
-          2
-        </div>
-        <div className={`step-pill ${currentStep === 3 ? "active" : ""}`}>
-          3
-        </div>
-      </div>
+          <div className="valuation-steps" aria-label="Valuation progress">
+            <div className={`step-pill ${currentStep === 1 ? "active" : ""}`}>
+              1
+            </div>
+            <div className={`step-pill ${currentStep === 2 ? "active" : ""}`}>
+              2
+            </div>
+            <div className={`step-pill ${currentStep === 3 ? "active" : ""}`}>
+              3
+            </div>
+          </div>
 
-      {currentStep === 1 ? (
-        <div className="valuation-card">
+          {currentStep === 1 ? (
+            <div className="valuation-card">
           <div>
             <h2>What&apos;s Your Property Worth?</h2>
             <label className="valuation-label">
@@ -350,11 +354,11 @@ function HomeValuationWizard() {
               <p>Start typing an address to preview the location.</p>
             )}
           </div>
-        </div>
-      ) : null}
+            </div>
+          ) : null}
 
-      {currentStep === 2 ? (
-        <div className="valuation-card">
+          {currentStep === 2 ? (
+            <div className="valuation-card">
           <div>
             <h2>Contact Information</h2>
             <p className="selected-address">
@@ -444,11 +448,11 @@ function HomeValuationWizard() {
               </button>
             </div>
           </div>
-        </div>
-      ) : null}
+            </div>
+          ) : null}
 
-      {currentStep === 3 ? (
-        <div className="valuation-card">
+          {currentStep === 3 ? (
+            <div className="valuation-card">
           <div className="thank-you-panel">
             <h2>Thank You</h2>
             <p>
@@ -461,8 +465,10 @@ function HomeValuationWizard() {
               </button>
             </div>
           </div>
+            </div>
+          ) : null}
         </div>
-      ) : null}
+      </div>
     </section>
   );
 }

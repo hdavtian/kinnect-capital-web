@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import ToolsSidebarNav from "../mortgage-tools/ToolsSidebarNav";
 import { assetPath } from "../../utils/assetPath";
 
 type TermYears = 10 | 15 | 20 | 25 | 30;
@@ -275,22 +276,25 @@ function MortgageCalculator() {
 
   return (
     <section className="calculator-section">
-      <h1>Mortgage Calculator</h1>
-      <p>Adjust values below to estimate your monthly payment.</p>
+      <div className="tools-page-layout">
+        <ToolsSidebarNav />
+        <div className="tools-page-content">
+          <h1>Mortgage Calculator</h1>
+          <p>Adjust values below to estimate your monthly payment.</p>
 
-      <div
-        className="calculator-page-hero"
-        style={{ backgroundImage: `url(${headerImageSrc})` }}
-        role="img"
-        aria-label="Mortgage calculator infographic header"
-      />
+          <div
+            className="calculator-page-hero"
+            style={{ backgroundImage: `url(${headerImageSrc})` }}
+            role="img"
+            aria-label="Mortgage calculator infographic header"
+          />
 
-      <div className="calculator-grid">
-        <form
-          className="calculator-form"
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <div className="calculator-form-grid">
+          <div className="calculator-grid">
+            <form
+              className="calculator-form"
+              onSubmit={(event) => event.preventDefault()}
+            >
+              <div className="calculator-form-grid">
             <label>
               Home Price
               <MaskedInput
@@ -386,62 +390,64 @@ function MortgageCalculator() {
                 step={0.01}
               />
             </label>
-          </div>
-
-          <div className="calculator-actions">
-            <button type="button" onClick={resetValues}>
-              Reset
-            </button>
-            <button type="button" onClick={onCalculateClick}>
-              Calculate
-            </button>
-          </div>
-        </form>
-
-        <div className="calculator-result">
-          <div className="donut-wrap">
-            <div
-              className="donut"
-              style={donutStyle}
-              aria-label="Payment breakdown donut chart"
-            >
-              <div className="donut-center">
-                <strong>{toCurrency(Math.round(breakdown.total))}</strong>
-                <span>Your Monthly Payment</span>
               </div>
+
+              <div className="calculator-actions">
+                <button type="button" onClick={resetValues}>
+                  Reset
+                </button>
+                <button type="button" onClick={onCalculateClick}>
+                  Calculate
+                </button>
+              </div>
+            </form>
+
+            <div className="calculator-result">
+              <div className="donut-wrap">
+                <div
+                  className="donut"
+                  style={donutStyle}
+                  aria-label="Payment breakdown donut chart"
+                >
+                  <div className="donut-center">
+                    <strong>{toCurrency(Math.round(breakdown.total))}</strong>
+                    <span>Your Monthly Payment</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul className="breakdown-list">
+                <li>
+                  <span>Principal and Interest</span>
+                  <strong>
+                    {toCurrencyWithCents(breakdown.principalAndInterest)} (
+                    {Math.round(percentages.principalAndInterest)}%)
+                  </strong>
+                </li>
+                <li>
+                  <span>Property Taxes</span>
+                  <strong>
+                    {toCurrencyWithCents(breakdown.propertyTax)} (
+                    {Math.round(percentages.propertyTax)}%)
+                  </strong>
+                </li>
+                <li>
+                  <span>HOA Dues</span>
+                  <strong>
+                    {toCurrencyWithCents(breakdown.hoa)} (
+                    {Math.round(percentages.hoa)}%)
+                  </strong>
+                </li>
+                <li>
+                  <span>Homeowner&apos;s Insurance</span>
+                  <strong>
+                    {toCurrencyWithCents(breakdown.insurance)} (
+                    {Math.round(percentages.insurance)}%)
+                  </strong>
+                </li>
+              </ul>
             </div>
           </div>
-
-          <ul className="breakdown-list">
-            <li>
-              <span>Principal and Interest</span>
-              <strong>
-                {toCurrencyWithCents(breakdown.principalAndInterest)} (
-                {Math.round(percentages.principalAndInterest)}%)
-              </strong>
-            </li>
-            <li>
-              <span>Property Taxes</span>
-              <strong>
-                {toCurrencyWithCents(breakdown.propertyTax)} (
-                {Math.round(percentages.propertyTax)}%)
-              </strong>
-            </li>
-            <li>
-              <span>HOA Dues</span>
-              <strong>
-                {toCurrencyWithCents(breakdown.hoa)} (
-                {Math.round(percentages.hoa)}%)
-              </strong>
-            </li>
-            <li>
-              <span>Homeowner&apos;s Insurance</span>
-              <strong>
-                {toCurrencyWithCents(breakdown.insurance)} (
-                {Math.round(percentages.insurance)}%)
-              </strong>
-            </li>
-          </ul>
         </div>
       </div>
     </section>

@@ -450,6 +450,12 @@ a:hover {
   border-bottom-color: var(--header-nav-text);
 }
 
+.nav-top-link.is-current,
+.nav-group-toggle.is-current {
+  background: var(--header-nav-hover);
+  border-bottom-color: var(--color-accent);
+}
+
 .nav-caret {
   font-size: 0.68rem;
   opacity: 0.75;
@@ -488,6 +494,14 @@ a:hover {
     color: var(--color-accent);
   }
 
+  .nav-sublist a.is-current {
+    text-decoration: none;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-weight: 700;
+    box-shadow: inset 3px 0 0 var(--color-accent);
+  }
+
   .nav-group-item:hover .nav-sublist,
   .nav-group-item:focus-within .nav-sublist {
     display: block;
@@ -498,6 +512,17 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 0 0 0 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .nav-list > .nav-group-item:first-child > .nav-top-link,
+  .nav-list > .nav-group-item:first-child > .nav-group-toggle {
+    margin-left: -1rem;
+  }
+
+  .nav-cta-wrap {
+    padding: 0;
+  }
 }
 
 .primary-cta {
@@ -578,6 +603,7 @@ h2 {
   background-position: center center;
 }
 
+.about-page .tools-page-content > h1,
 .about-page > h1 {
   color: var(--color-accent);
 }
@@ -606,6 +632,13 @@ h2 {
   color: var(--color-text);
 }
 
+.content-page > h1,
+.content-page .tools-page-content > h1 {
+  margin: 0;
+  color: var(--color-accent);
+  line-height: 1.2;
+}
+
 .content-page-hero-frame {
   margin-top: 0.75rem;
 }
@@ -616,6 +649,14 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+@media (min-width: 768px) {
+  .buy-home-page .content-page-hero,
+  .commercial-financing-page .content-page-hero,
+  .refinance-page .content-page-hero {
+    height: 450px;
+  }
 }
 
 .content-page-section {
@@ -878,6 +919,14 @@ h2 {
     background: var(--header-nav-hover);
   }
 
+  .nav-sublist a.is-current {
+    text-decoration: none;
+    color: var(--header-nav-text);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    box-shadow: inset 3px 0 0 var(--color-accent);
+    font-weight: 700;
+  }
+
   .nav-cta-wrap {
     display: none;
   }
@@ -1124,15 +1173,19 @@ h2 {
   gap: 1rem;
   padding: 0.85rem 0;
   font-size: 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-bottom-copy {
   color: var(--footer-bottom-text);
+  margin: 0;
 }
 
 .footer-bottom-links {
   display: flex;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .footer-bottom-links a {
@@ -1177,7 +1230,7 @@ h2 {
   margin-top: 0.5rem;
 }
 
-.calculator-section > p {
+.calculator-section .tools-page-content > p {
   margin-top: 0;
 }
 
@@ -1187,13 +1240,82 @@ h2 {
   line-height: 1.62;
 }
 
-.calculator-section > h1,
-.valuation-section > h1 {
+.tools-page-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.tools-page-content > * + * {
+  margin-top: 1rem;
+}
+
+.tools-page-sidebar {
+  --tools-sidebar-stick-gap: 0.9rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 0.65rem;
+  position: sticky;
+  top: calc(124px + var(--tools-sidebar-stick-gap));
+}
+
+.tools-page-sidebar h2 {
+  margin: 0 0 0.45rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.tools-page-sidebar nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.tools-page-sidebar-link {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.83rem;
+  line-height: 1.25;
+  padding: 0.36rem 0.48rem;
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s,
+    transform 0.15s;
+}
+
+.tools-page-sidebar-link:hover {
+  text-decoration: none;
+  background: var(--color-accent-soft);
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  color: var(--color-accent);
+  transform: translateX(2px);
+}
+
+.tools-page-sidebar-link.is-current {
+  text-decoration: none;
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--color-accent);
+}
+
+.calculator-section .tools-page-content > h1,
+.valuation-section .tools-page-content > h1 {
   color: var(--color-accent);
 }
 
-.calculator-section > p,
-.valuation-section > p {
+.calculator-section .tools-page-content > p,
+.valuation-section .tools-page-content > p {
   max-width: 68ch;
   color: var(--color-text-muted);
 }
@@ -1343,7 +1465,22 @@ h2 {
   }
 }
 
+@media (max-width: 1023px) {
+  .tools-page-layout {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .tools-page-sidebar {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
+  .tools-page-layout {
+    gap: 0.75rem;
+  }
+
   .content-page-hero {
     height: 190px;
   }

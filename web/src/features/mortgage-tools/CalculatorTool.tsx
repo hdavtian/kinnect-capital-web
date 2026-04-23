@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { findToolById, type ToolId } from "../../data/mortgageTools";
 import { ROUTES } from "../../routes";
 import { assetPath } from "../../utils/assetPath";
+import ToolsSidebarNav from "./ToolsSidebarNav";
 import {
   calculateMortgagePayment,
   clamp,
@@ -1694,39 +1695,44 @@ function CalculatorTool({ toolId }: CalculatorToolProps) {
 
   return (
     <section className="tool-page-section">
-      <header className="tool-page-header">
-        <p className="tool-page-kicker">Mortgage Tools</p>
-        <h1>{tool.title}</h1>
-        <p>{tool.description}</p>
-      </header>
+      <div className="tools-page-layout">
+        <ToolsSidebarNav />
+        <div className="tools-page-content">
+          <header className="tool-page-header">
+            <p className="tool-page-kicker">Mortgage Tools</p>
+            <h1>{tool.title}</h1>
+            <p>{tool.description}</p>
+          </header>
 
-      {tool.headerImageSrc ? (
-        <div
-          className="tool-page-hero"
-          style={{ backgroundImage: `url(${assetPath(tool.headerImageSrc)})` }}
-          role="img"
-          aria-label={tool.headerImageAlt ?? `${tool.title} infographic`}
-        />
-      ) : null}
+          {tool.headerImageSrc ? (
+            <div
+              className="tool-page-hero"
+              style={{ backgroundImage: `url(${assetPath(tool.headerImageSrc)})` }}
+              role="img"
+              aria-label={tool.headerImageAlt ?? `${tool.title} infographic`}
+            />
+          ) : null}
 
-      {renderToolById(toolId)}
+          {renderToolById(toolId)}
 
-      <aside className="tool-assumptions">
-        <h3>Assumptions</h3>
-        <p>
-          This is an estimate tool. Actual eligibility, pricing, and final
-          payment structure may vary by loan program, borrower profile, and
-          lender overlays.
-        </p>
-      </aside>
+          <aside className="tool-assumptions">
+            <h3>Assumptions</h3>
+            <p>
+              This is an estimate tool. Actual eligibility, pricing, and final
+              payment structure may vary by loan program, borrower profile, and
+              lender overlays.
+            </p>
+          </aside>
 
-      <div className="tool-cta-block">
-        <h3>Want a custom scenario review?</h3>
-        <p>
-          Share your numbers and goals. Kinnect Capital can structure options
-          around your income profile, property, and timeline.
-        </p>
-        <Link to={ROUTES.contact}>Talk to Arthur</Link>
+          <div className="tool-cta-block">
+            <h3>Want a custom scenario review?</h3>
+            <p>
+              Share your numbers and goals. Kinnect Capital can structure
+              options around your income profile, property, and timeline.
+            </p>
+            <Link to={ROUTES.contact}>Talk to Arthur</Link>
+          </div>
+        </div>
       </div>
     </section>
   );
