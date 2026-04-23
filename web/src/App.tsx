@@ -14,6 +14,7 @@ import LoanTermComparisonPage from "./pages/LoanTermComparisonPage";
 import MortgageCalculatorPage from "./pages/MortgageCalculatorPage";
 import MortgageToolsPage from "./pages/MortgageToolsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import OrnamentPickerPage from "./pages/OrnamentPickerPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import RateBuydownPage from "./pages/RateBuydownPage";
 import RefinanceBreakEvenPage from "./pages/RefinanceBreakEvenPage";
@@ -76,6 +77,10 @@ function App() {
           <Route path={ROUTES.contact} element={<ContactPage />} />
           <Route path={ROUTES.privacy} element={<PrivacyPolicyPage />} />
           <Route path={ROUTES.terms} element={<TermsOfUsePage />} />
+          <Route
+            path={ROUTES.ornamentPicker}
+            element={<OrnamentPickerPage />}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route

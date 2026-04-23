@@ -1,78 +1,97 @@
 [
   {
+    "id": "self-employed-mortgage-loan",
+    "title": "What Is a Self-Employed Mortgage Loan?",
+    "tagline": "A self-employed mortgage is a type of home loan that self-employed borrowers can qualify for without having to submit tax returns, or other traditional income documentation.",
+    "bullets": [
+      "Many entrepreneurs, independent contractors, and small business owners take advantage of tax code benefits, resulting in tax returns that may not accurately reflect their yearly earnings.",
+      "Self-employed mortgages are designed to solve this problem by providing several different loan solutions.",
+      "In most cases, these programs can tremendously increase the borrower's home buying power."
+    ],
+    "imagePath": "/images/info-graphics/250x250/bank-statement-loan.png"
+  },
+  {
     "id": "bank-statement",
     "title": "Bank Statement Loan",
-    "tagline": "Most common mortgage solution for the self-employed borrower.",
+    "tagline": "Most common mortgage solution for the self-employed borrower",
     "bullets": [
-      "12 or 24 months bank statements",
+      "Qualify using 12 or 24 months business or personal bank statements",
       "No tax returns required",
-      "15/30/40 year fixed options"
+      "15, 30 & 40 year fixed terms available",
+      "First time home buyers welcome",
+      "Common sense approach to underwriting a business owner's financial profile",
+      "Competitive interest rates"
     ],
     "imagePath": "/images/info-graphics/250x250/bank-statement-loan.png"
   },
   {
     "id": "profit-loss",
     "title": "Profit & Loss Loan (P&L Only)",
-    "tagline": "Uses CPA prepared P&L statements for qualification.",
+    "tagline": "Excellent mortgage alternative for the sophisticated self-employed borrower. A profit and loss loan looks at a borrower's company's P&L statement to determine if borrowers qualify for a loan.",
     "bullets": [
-      "1 or 2 year CPA P&L",
+      "This eliminates the need to use tax returns which can be helpful when applicants take a large number of deductions and do not qualify for traditional financing.",
+      "1 or 2 year cpa P&L",
       "No tax returns required",
-      "30 year fixed options"
+      "30 year fixed terms available",
+      "Common sense approach to underwriting"
     ],
     "imagePath": "/images/info-graphics/250x250/profit-loss-loan.png"
   },
   {
     "id": "asset-based",
     "title": "Asset Based Loan",
-    "tagline": "Qualify using eligible assets instead of employment income.",
+    "tagline": "Loan option where borrowers can use their assets to qualify for a mortgage loan instead of employment income.",
     "bullets": [
-      "Investment accounts",
-      "Money market and deposits",
-      "Retirement accounts"
+      "Investment accounts such as stocks, bonds, and mutual funds.",
+      "Money market accounts, CD's, checking or savings accounts.",
+      "Retirement accounts such as 401K or IRA"
     ],
     "imagePath": "/images/info-graphics/250x250/asset-based-loan.png"
   },
   {
     "id": "dscr",
     "title": "DSCR Loan",
-    "tagline": "Investment property financing based on property cash flow.",
+    "tagline": "Real Estate Investment Loans. Qualification is based solely on the cash-flow of the investment property.",
     "bullets": [
-      "Cash-flow qualification",
-      "30 year fixed options",
-      "Purchase, refinance or cash-out"
+      "Qualify only using the income from the investment property.",
+      "30 Year fixed options available",
+      "Ideal for real estate investors",
+      "Ideal for purchase, refinance or cash out"
     ],
     "imagePath": "/images/info-graphics/250x250/dscr-loan.png"
   },
   {
     "id": "heloan",
     "title": "HELOAN 2nd Mortgage",
-    "tagline": "Access equity while preserving the low-rate first mortgage.",
+    "tagline": "A Closed-end Cash-out Loan. For borrowers who want to access equity in their home and keep their low rate first mortgage.",
     "bullets": [
-      "Cash-out flexibility",
-      "Debt consolidation support",
-      "Home improvement use cases"
+      "Ideal for cash-out for many uses including debt consolidation, home improvement, etc.",
+      "Debt consolidation: Pay off high interest credit cards, car loans, or other debt",
+      "Home Improvement: Remodel your home or take on new projects to upgrade your property.",
+      "Qualify with 12 months bank statements or full doc",
+      "Keep your low interest 1st mortgage in place"
     ],
     "imagePath": "/images/info-graphics/250x250/heloan.png"
   },
   {
     "id": "heloc",
     "title": "Home Equity Line of Credit (HELOC)",
-    "tagline": "Revolving line of credit secured by home equity.",
+    "tagline": "A home equity line of credit (HELOC) is a revolving credit line that's secured by the equity in your home.",
     "bullets": [
-      "Renovations",
-      "Tuition and large expenses",
-      "Debt consolidation"
+      "You can use a HELOC for large expenses, such as home renovations or college tuition.",
+      "You can also use a HELOC to consolidate higher-interest rate debt on other loans, such as credit cards."
     ],
     "imagePath": "/images/info-graphics/250x250/heloc.png"
   },
   {
     "id": "private-money",
     "title": "Private Money Loans",
-    "tagline": "Short term lending with faster approvals and funding.",
+    "tagline": "Kinnect Capital has access to a vast network of private money lenders ready to fund. Private money loans are short term, privately funded loans ideal for borrowers who need quick funding for real estate acquisition or refinance.",
     "bullets": [
-      "Fast closing timelines",
-      "Flexible underwriting",
-      "Typical terms: 12-24 months"
+      "These loans have fewer underwriting requirements and can fund and close fast.",
+      "Can close quickly and easily",
+      "Flexible, easy underwriting requirements",
+      "Terms are typically 12-24 months"
     ],
     "imagePath": "/images/info-graphics/250x250/private-money-loan.png"
   }

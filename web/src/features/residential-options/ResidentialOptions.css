@@ -20,20 +20,109 @@
   font-size: clamp(0.98rem, 0.94rem + 0.2vw, 1.08rem);
 }
 
-.residential-options-grid {
+.residential-options-layout {
   margin-top: 1.2rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.residential-options-toc {
+  --toc-text-inset: 0.18rem;
+  position: sticky;
+  top: calc(124px + 0.9rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 1.1rem 0.7rem;
+}
+
+.residential-options-toc::before,
+.residential-options-toc::after {
+  content: "─────✦─────";
+  position: absolute;
+  left: 0.7rem;
+  right: 0.7rem;
+  display: grid;
+  place-items: center;
+  height: 1rem;
+  color: color-mix(in srgb, var(--color-accent) 82%, var(--color-text) 18%);
+  font-size: 1.25rem;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.residential-options-toc::before {
+  top: 0.35rem;
+}
+
+.residential-options-toc::after {
+  bottom: 0.35rem;
+}
+
+.residential-options-toc h2 {
+  margin: 1.45rem 0 0.5rem;
+  padding-left: var(--toc-text-inset);
+  text-align: left;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.residential-options-toc nav > ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+  padding-inline-start: 0;
+  margin-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.34rem;
+}
+
+.residential-options-toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.84rem;
+  line-height: 1.25;
+  padding: 0.36rem 0.2rem 0.36rem var(--toc-text-inset);
+  border-left: 3px solid transparent;
+  border-radius: 0.2rem;
+  border: 1px solid transparent;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.residential-options-toc a:hover:not([aria-current="true"]) {
+  text-decoration: none;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+.residential-options-toc a[aria-current="true"] {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  border-left-color: color-mix(in srgb, var(--color-accent) 94%, white 6%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 24%, transparent);
+}
+
+.residential-options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.95rem;
 }
 
-.residential-options-grid > .residential-option-card:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: min(100%, 900px);
-}
-
 .residential-option-card {
+  scroll-margin-top: 138px;
   border: 1px solid var(--color-border);
   border-left: 6px solid color-mix(in srgb, var(--color-accent) 74%, white 26%);
   background: linear-gradient(
@@ -47,6 +136,29 @@
   align-items: stretch;
   box-shadow: var(--shadow-soft);
   overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.residential-option-card.is-active {
+  border-left-color: color-mix(in srgb, var(--color-accent) 96%, white 4%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-accent-soft) 68%, var(--color-surface) 32%)
+      0%,
+    var(--color-surface) 100%
+  );
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-accent) 56%, transparent),
+    0 10px 28px color-mix(in srgb, var(--color-accent) 14%, transparent),
+    var(--shadow-soft);
+}
+
+.residential-option-card.is-active .residential-option-card__title {
+  color: color-mix(in srgb, var(--color-accent) 94%, var(--color-text) 6%);
 }
 
 .residential-option-card__media {
@@ -107,6 +219,15 @@
 }
 
 @media (max-width: 900px) {
+  .residential-options-layout {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .residential-options-toc {
+    position: static;
+  }
+
   .residential-options-grid {
     grid-template-columns: 1fr;
     justify-items: center;

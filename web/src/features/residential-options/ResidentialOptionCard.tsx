@@ -10,11 +10,18 @@ export interface ResidentialOptionItem {
 
 interface ResidentialOptionCardProps {
   item: ResidentialOptionItem;
+  isActive?: boolean;
 }
 
-function ResidentialOptionCard({ item }: ResidentialOptionCardProps) {
+function ResidentialOptionCard({
+  item,
+  isActive = false,
+}: ResidentialOptionCardProps) {
   return (
-    <article className="residential-option-card">
+    <article
+      id={item.id}
+      className={`residential-option-card${isActive ? " is-active" : ""}`}
+    >
       <div className="residential-option-card__media">
         <img
           src={assetPath(item.imagePath)}

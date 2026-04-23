@@ -1,0 +1,80 @@
+.ornament-picker-page {
+  width: min(100%, var(--inner-max-width));
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ornament-picker-header {
+  margin-bottom: 1rem;
+}
+
+.ornament-picker-header h1 {
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.ornament-picker-header p {
+  margin: 0.45rem 0 0;
+  color: var(--color-text-muted);
+}
+
+.ornament-picker-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.ornament-picker-row {
+  display: block;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.ornament-picker-row:last-child {
+  border-bottom: 0;
+}
+
+.ornament-picker-symbol {
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
+}
+
+.ornament-picker-meta {
+  margin-top: 0.3rem;
+  min-width: 0;
+}
+
+.ornament-picker-name {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.ornament-picker-char {
+  margin: 0.2rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 639px) {
+  .ornament-picker-page {
+    padding: 0 1rem;
+  }
+
+  .ornament-picker-row {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .ornament-picker-symbol {
+    font-size: 1.6rem;
+  }
+}
