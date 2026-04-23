@@ -1,6 +1,6 @@
+import AboutSidebarNav from "../components/layout/AboutSidebarNav";
 import { teamIntroSections } from "../data/siteContent";
 import { testimonials } from "../data/testimonials";
-import AboutSidebarNav from "../components/layout/AboutSidebarNav";
 import ArthurProfileSection from "../features/team/ArthurProfileSection";
 import TestimonialsSection from "../features/team/TestimonialsSection";
 

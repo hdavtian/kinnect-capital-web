@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { mortgageTools } from "../../data/mortgageTools";
 import { assetPath } from "../../utils/assetPath";
-import ToolsSidebarNav from "./ToolsSidebarNav";
 import "./MortgageTools.css";
+import ToolsSidebarNav from "./ToolsSidebarNav";
 
 function MortgageToolsHub() {
   return (

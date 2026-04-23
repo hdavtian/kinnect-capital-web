@@ -30,7 +30,10 @@ function BuyHomePage() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
               {overviewSection.cta ? (
-                <Link className="content-page-link" to={overviewSection.cta.href}>
+                <Link
+                  className="content-page-link"
+                  to={overviewSection.cta.href}
+                >
                   {overviewSection.cta.label}
                 </Link>
               ) : null}

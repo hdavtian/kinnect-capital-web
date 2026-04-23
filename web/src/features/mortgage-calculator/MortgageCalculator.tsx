@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import ToolsSidebarNav from "../mortgage-tools/ToolsSidebarNav";
 import { assetPath } from "../../utils/assetPath";
+import ToolsSidebarNav from "../mortgage-tools/ToolsSidebarNav";
 
 type TermYears = 10 | 15 | 20 | 25 | 30;
 
@@ -295,101 +295,101 @@ function MortgageCalculator() {
               onSubmit={(event) => event.preventDefault()}
             >
               <div className="calculator-form-grid">
-            <label>
-              Home Price
-              <MaskedInput
-                value={values.homePrice}
-                onCommit={updateWithHomePrice}
-                prefix="$"
-                min={0}
-              />
-            </label>
+                <label>
+                  Home Price
+                  <MaskedInput
+                    value={values.homePrice}
+                    onCommit={updateWithHomePrice}
+                    prefix="$"
+                    min={0}
+                  />
+                </label>
 
-            <label>
-              Term
-              <select
-                value={values.termYears}
-                onChange={(event) =>
-                  updateValue(
-                    "termYears",
-                    Number(event.target.value) as TermYears,
-                  )
-                }
-              >
-                <option value={10}>10-year fixed</option>
-                <option value={15}>15-year fixed</option>
-                <option value={20}>20-year fixed</option>
-                <option value={25}>25-year fixed</option>
-                <option value={30}>30-year fixed</option>
-              </select>
-            </label>
+                <label>
+                  Term
+                  <select
+                    value={values.termYears}
+                    onChange={(event) =>
+                      updateValue(
+                        "termYears",
+                        Number(event.target.value) as TermYears,
+                      )
+                    }
+                  >
+                    <option value={10}>10-year fixed</option>
+                    <option value={15}>15-year fixed</option>
+                    <option value={20}>20-year fixed</option>
+                    <option value={25}>25-year fixed</option>
+                    <option value={30}>30-year fixed</option>
+                  </select>
+                </label>
 
-            <label>
-              Down Payment
-              <MaskedInput
-                value={values.downPaymentAmount}
-                onCommit={updateWithDownPaymentAmount}
-                prefix="$"
-                min={0}
-              />
-            </label>
+                <label>
+                  Down Payment
+                  <MaskedInput
+                    value={values.downPaymentAmount}
+                    onCommit={updateWithDownPaymentAmount}
+                    prefix="$"
+                    min={0}
+                  />
+                </label>
 
-            <label>
-              Property Tax / month
-              <MaskedInput
-                value={values.propertyTaxMonthly}
-                onCommit={(n) => updateValue("propertyTaxMonthly", n)}
-                prefix="$"
-                min={0}
-                step={0.01}
-              />
-            </label>
+                <label>
+                  Property Tax / month
+                  <MaskedInput
+                    value={values.propertyTaxMonthly}
+                    onCommit={(n) => updateValue("propertyTaxMonthly", n)}
+                    prefix="$"
+                    min={0}
+                    step={0.01}
+                  />
+                </label>
 
-            <label>
-              Down Payment %
-              <MaskedInput
-                value={values.downPaymentPercent}
-                onCommit={updateWithDownPaymentPercent}
-                suffix="%"
-                min={0}
-                max={100}
-                step={0.01}
-              />
-            </label>
+                <label>
+                  Down Payment %
+                  <MaskedInput
+                    value={values.downPaymentPercent}
+                    onCommit={updateWithDownPaymentPercent}
+                    suffix="%"
+                    min={0}
+                    max={100}
+                    step={0.01}
+                  />
+                </label>
 
-            <label>
-              HOA Dues / month
-              <MaskedInput
-                value={values.hoaMonthly}
-                onCommit={(n) => updateValue("hoaMonthly", n)}
-                prefix="$"
-                min={0}
-                step={0.01}
-              />
-            </label>
+                <label>
+                  HOA Dues / month
+                  <MaskedInput
+                    value={values.hoaMonthly}
+                    onCommit={(n) => updateValue("hoaMonthly", n)}
+                    prefix="$"
+                    min={0}
+                    step={0.01}
+                  />
+                </label>
 
-            <label>
-              Interest Rate %
-              <MaskedInput
-                value={values.interestRate}
-                onCommit={(n) => updateValue("interestRate", n)}
-                suffix="%"
-                min={0}
-                max={100}
-                step={0.01}
-              />
-            </label>
+                <label>
+                  Interest Rate %
+                  <MaskedInput
+                    value={values.interestRate}
+                    onCommit={(n) => updateValue("interestRate", n)}
+                    suffix="%"
+                    min={0}
+                    max={100}
+                    step={0.01}
+                  />
+                </label>
 
-            <label>
-              Homeowner&apos;s Insurance / year
-              <MaskedInput
-                value={values.insuranceYearly}
-                onCommit={(n) => updateValue("insuranceYearly", n)}
-                prefix="$"
-                min={0}
-                step={0.01}
-              />
-            </label>
+                <label>
+                  Homeowner&apos;s Insurance / year
+                  <MaskedInput
+                    value={values.insuranceYearly}
+                    onCommit={(n) => updateValue("insuranceYearly", n)}
+                    prefix="$"
+                    min={0}
+                    step={0.01}
+                  />
+                </label>
               </div>
 
               <div className="calculator-actions">

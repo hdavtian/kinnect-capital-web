@@ -751,8 +751,24 @@ h2 {
 .home-feature h2 {
   margin: 0;
   color: var(--color-accent);
-  line-height: 1.15;
-  font-size: clamp(1.32rem, 1.2rem + 0.45vw, 1.62rem);
+  line-height: 1.1;
+  font-size: clamp(1.42rem, 1.28rem + 0.55vw, 1.78rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  position: relative;
+  padding-bottom: 0.52rem;
+  text-wrap: balance;
+}
+
+.home-feature h1::after,
+.home-feature h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.2rem;
+  height: 3px;
+  background: color-mix(in srgb, var(--color-accent) 80%, white 20%);
 }
 
 .home-feature__subheading {

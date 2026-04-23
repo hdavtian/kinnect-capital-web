@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import ToolsSidebarNav from "../mortgage-tools/ToolsSidebarNav";
 import { ROUTES } from "../../routes";
+import ToolsSidebarNav from "../mortgage-tools/ToolsSidebarNav";
 
 interface ContactState {
   fullName: string;
@@ -293,178 +293,187 @@ function HomeValuationWizard() {
 
           {currentStep === 1 ? (
             <div className="valuation-card">
-          <div>
-            <h2>What&apos;s Your Property Worth?</h2>
-            <label className="valuation-label">
-              Property Address
-              <input
-                type="text"
-                value={addressInput}
-                onChange={(event) => onAddressInputChange(event.target.value)}
-                placeholder="123 Main Street, Los Angeles, CA"
-              />
-            </label>
+              <div>
+                <h2>What&apos;s Your Property Worth?</h2>
+                <label className="valuation-label">
+                  Property Address
+                  <input
+                    type="text"
+                    value={addressInput}
+                    onChange={(event) =>
+                      onAddressInputChange(event.target.value)
+                    }
+                    placeholder="123 Main Street, Los Angeles, CA"
+                  />
+                </label>
 
-            {suggestions.length > 0 ? (
-              <ul className="address-suggestions">
-                {suggestions.map((item) => (
-                  <li key={item.id}>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        onSelectAddress(item.description, item.placeId)
-                      }
-                      className={
-                        selectedAddress === item.description ? "selected" : ""
-                      }
+                {suggestions.length > 0 ? (
+                  <ul className="address-suggestions">
+                    {suggestions.map((item) => (
+                      <li key={item.id}>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            onSelectAddress(item.description, item.placeId)
+                          }
+                          className={
+                            selectedAddress === item.description
+                              ? "selected"
+                              : ""
+                          }
+                        >
+                          {item.description}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+
+                <p className="address-source-note">{addressSourceMessage}</p>
+
+                <button
+                  type="button"
+                  onClick={goToStepTwo}
+                  disabled={!canContinueStepOne}
+                >
+                  Continue
+                </button>
+              </div>
+
+              <div className="valuation-map-wrap">
+                <h3>Map Preview</h3>
+                {mapUrl ? (
+                  <>
+                    <iframe
+                      title="Property map preview"
+                      src={mapUrl}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                    <a
+                      href={openGoogleMapsUrl}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      {item.description}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-
-            <p className="address-source-note">{addressSourceMessage}</p>
-
-            <button
-              type="button"
-              onClick={goToStepTwo}
-              disabled={!canContinueStepOne}
-            >
-              Continue
-            </button>
-          </div>
-
-          <div className="valuation-map-wrap">
-            <h3>Map Preview</h3>
-            {mapUrl ? (
-              <>
-                <iframe
-                  title="Property map preview"
-                  src={mapUrl}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-                <a href={openGoogleMapsUrl} target="_blank" rel="noreferrer">
-                  Open in Google Maps
-                </a>
-              </>
-            ) : (
-              <p>Start typing an address to preview the location.</p>
-            )}
-          </div>
+                      Open in Google Maps
+                    </a>
+                  </>
+                ) : (
+                  <p>Start typing an address to preview the location.</p>
+                )}
+              </div>
             </div>
           ) : null}
 
           {currentStep === 2 ? (
             <div className="valuation-card">
-          <div>
-            <h2>Contact Information</h2>
-            <p className="selected-address">
-              Selected address: {selectedAddress}
-            </p>
-            {selectedPlaceId ? (
-              <p className="selected-address-meta">
-                Place ID: {selectedPlaceId}
-              </p>
-            ) : null}
+              <div>
+                <h2>Contact Information</h2>
+                <p className="selected-address">
+                  Selected address: {selectedAddress}
+                </p>
+                {selectedPlaceId ? (
+                  <p className="selected-address-meta">
+                    Place ID: {selectedPlaceId}
+                  </p>
+                ) : null}
 
-            <div className="valuation-form-grid">
-              <label className="valuation-label">
-                Full Name
-                <input
-                  type="text"
-                  value={contact.fullName}
-                  onChange={(event) =>
-                    setContact((prev) => ({
-                      ...prev,
-                      fullName: event.target.value,
-                    }))
-                  }
-                />
-              </label>
+                <div className="valuation-form-grid">
+                  <label className="valuation-label">
+                    Full Name
+                    <input
+                      type="text"
+                      value={contact.fullName}
+                      onChange={(event) =>
+                        setContact((prev) => ({
+                          ...prev,
+                          fullName: event.target.value,
+                        }))
+                      }
+                    />
+                  </label>
 
-              <label className="valuation-label">
-                Email Address
-                <input
-                  type="email"
-                  value={contact.email}
-                  onChange={(event) =>
-                    setContact((prev) => ({
-                      ...prev,
-                      email: event.target.value,
-                    }))
-                  }
-                />
-              </label>
+                  <label className="valuation-label">
+                    Email Address
+                    <input
+                      type="email"
+                      value={contact.email}
+                      onChange={(event) =>
+                        setContact((prev) => ({
+                          ...prev,
+                          email: event.target.value,
+                        }))
+                      }
+                    />
+                  </label>
 
-              <label className="valuation-label">
-                Phone Number
-                <input
-                  type="tel"
-                  value={contact.phone}
-                  onChange={(event) =>
-                    setContact((prev) => ({
-                      ...prev,
-                      phone: event.target.value,
-                    }))
-                  }
-                />
-              </label>
-            </div>
+                  <label className="valuation-label">
+                    Phone Number
+                    <input
+                      type="tel"
+                      value={contact.phone}
+                      onChange={(event) =>
+                        setContact((prev) => ({
+                          ...prev,
+                          phone: event.target.value,
+                        }))
+                      }
+                    />
+                  </label>
+                </div>
 
-            <label className="consent-checkbox">
-              <input
-                type="checkbox"
-                checked={contact.consent}
-                onChange={(event) =>
-                  setContact((prev) => ({
-                    ...prev,
-                    consent: event.target.checked,
-                  }))
-                }
-              />
-              <span>
-                I agree to be contacted by Kinnect Capital via call, email, and
-                text for real estate services. To opt out, you can reply
-                &apos;stop&apos; at any time or reply &apos;help&apos; for
-                assistance. You can also click the unsubscribe link in the
-                emails. Message and data rates may apply. Message frequency may
-                vary. See our <Link to={ROUTES.privacy}>privacy policy</Link>.
-              </span>
-            </label>
+                <label className="consent-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={contact.consent}
+                    onChange={(event) =>
+                      setContact((prev) => ({
+                        ...prev,
+                        consent: event.target.checked,
+                      }))
+                    }
+                  />
+                  <span>
+                    I agree to be contacted by Kinnect Capital via call, email,
+                    and text for real estate services. To opt out, you can reply
+                    &apos;stop&apos; at any time or reply &apos;help&apos; for
+                    assistance. You can also click the unsubscribe link in the
+                    emails. Message and data rates may apply. Message frequency
+                    may vary. See our{" "}
+                    <Link to={ROUTES.privacy}>privacy policy</Link>.
+                  </span>
+                </label>
 
-            <div className="valuation-actions">
-              <button type="button" onClick={() => setCurrentStep(1)}>
-                Back
-              </button>
-              <button
-                type="button"
-                onClick={goToStepThree}
-                disabled={!canContinueStepTwo}
-              >
-                Continue
-              </button>
-            </div>
-          </div>
+                <div className="valuation-actions">
+                  <button type="button" onClick={() => setCurrentStep(1)}>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goToStepThree}
+                    disabled={!canContinueStepTwo}
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
             </div>
           ) : null}
 
           {currentStep === 3 ? (
             <div className="valuation-card">
-          <div className="thank-you-panel">
-            <h2>Thank You</h2>
-            <p>
-              I am gathering your property information. Your home valuation
-              report will arrive in your inbox.
-            </p>
-            <div className="valuation-actions">
-              <button type="button" onClick={() => setCurrentStep(2)}>
-                Back
-              </button>
-            </div>
-          </div>
+              <div className="thank-you-panel">
+                <h2>Thank You</h2>
+                <p>
+                  I am gathering your property information. Your home valuation
+                  report will arrive in your inbox.
+                </p>
+                <div className="valuation-actions">
+                  <button type="button" onClick={() => setCurrentStep(2)}>
+                    Back
+                  </button>
+                </div>
+              </div>
             </div>
           ) : null}
         </div>

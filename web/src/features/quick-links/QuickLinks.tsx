@@ -28,12 +28,12 @@ const panels: QuickLinkPanel[] = [
     cta: "Discuss Your Scenario",
   },
   {
-    id: "calculator",
-    label: "Mortgage Calculator",
+    id: "tools",
+    label: "Mortgage Tools",
     description:
-      "Estimate your monthly payment with our real-time calculator. Adjust rate, term, taxes, and insurance instantly.",
-    href: ROUTES.calculator,
-    cta: "Run the Numbers",
+      "Compare scenarios across our full calculator suite, including affordability, refinance, DSCR, and buy-vs-rent tools.",
+    href: ROUTES.toolsHub,
+    cta: "Explore All Tools",
   },
 ];
 
