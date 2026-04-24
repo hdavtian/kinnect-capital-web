@@ -11,13 +11,15 @@ function CommercialFinancingPage() {
 
       <figure className="page-hero-image content-page-hero-frame">
         <div
-          className="content-page-hero"
+          className="content-page-hero content-page-hero--v03 content-page-hero--v37"
           style={{
-            backgroundImage: `url(${assetPath("/images/office-building.png")})`,
+            backgroundImage: `url(${assetPath("/images/commercial-financing.avif")})`,
           }}
           role="img"
           aria-label="Commercial financing visual placeholder"
-        />
+        >
+          <span className="content-page-hero-noise" aria-hidden="true" />
+        </div>
       </figure>
 
       {overviewSection ? (

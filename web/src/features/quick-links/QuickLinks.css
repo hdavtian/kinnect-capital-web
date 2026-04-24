@@ -3,6 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   width: 100%;
+  height: min(18vh, 216px);
 }
 
 .quick-links__panel {

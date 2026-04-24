@@ -1690,6 +1690,8 @@ interface CalculatorToolProps {
   toolId: ToolId;
 }
 
+const SHARED_CALCULATOR_BANNER = "/images/calculators/calculators.avif";
+
 function CalculatorTool({ toolId }: CalculatorToolProps) {
   const tool = findToolById(toolId);
 
@@ -1704,14 +1706,12 @@ function CalculatorTool({ toolId }: CalculatorToolProps) {
             <p>{tool.description}</p>
           </header>
 
-          {tool.headerImageSrc ? (
-            <div
-              className="tool-page-hero"
-              style={{ backgroundImage: `url(${assetPath(tool.headerImageSrc)})` }}
-              role="img"
-              aria-label={tool.headerImageAlt ?? `${tool.title} infographic`}
-            />
-          ) : null}
+          <div
+            className="tool-page-hero"
+            style={{ backgroundImage: `url(${assetPath(SHARED_CALCULATOR_BANNER)})` }}
+            role="img"
+            aria-label="Mortgage tools calculator banner"
+          />
 
           {renderToolById(toolId)}
 

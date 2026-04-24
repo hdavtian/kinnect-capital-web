@@ -235,19 +235,11 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 20;
-  /* Opt out of scroll anchoring so height changes never feed back into scrollY */
-  overflow-anchor: none;
 }
 
-/* Spacer that reserves the header's footprint in document flow */
 .header-spacer {
-  height: 196px; /* 144px identity + 52px nav */
-  transition: height 0.3s ease;
+  height: 72px;
   pointer-events: none;
-}
-
-.site-header--scrolled + .header-spacer {
-  height: 124px; /* 72px identity + 52px nav */
 }
 
 /* ── Inner wrapper: constrains content in header/footer bands ── */
@@ -259,9 +251,9 @@ a:hover {
 
 /* ── Header top band ── */
 .header-top {
+  position: relative;
   background: var(--header-top-bg);
   border-bottom: 1px solid var(--header-top-border);
-  transition: none;
 }
 
 .header-top-inner {
@@ -269,55 +261,27 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  height: 144px;
-  transition: height 0.3s ease;
-}
-
-/* Scrolled: shrink top band back to compact height */
-.site-header--scrolled .header-top-inner {
-  height: 72px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 /* Scale brand elements when tall */
 .header-top-inner .logo-mark {
-  width: 3.2rem;
-  height: 3.2rem;
-  font-size: 1rem;
-  transition:
-    width 0.3s ease,
-    height 0.3s ease,
-    font-size 0.3s ease;
-}
-
-.site-header--scrolled .header-top-inner .logo-mark {
-  width: 2.4rem;
-  height: 2.4rem;
-  font-size: 0.8rem;
+  width: 2.45rem;
+  height: 2.45rem;
+  font-size: 0.84rem;
 }
 
 .brand-text-wrap strong {
-  font-size: 1.35rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--header-top-text);
-  transition: font-size 0.3s ease;
-}
-
-.site-header--scrolled .brand-text-wrap strong {
-  font-size: 1.05rem;
 }
 
 .brand-text-wrap small {
   color: color-mix(in srgb, var(--header-top-text) 65%, transparent);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  transition:
-    font-size 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.site-header--scrolled .brand-text-wrap small {
   font-size: 0.7rem;
-  opacity: 0.8;
+  letter-spacing: 0.04em;
 }
 
 .brand a {
@@ -344,7 +308,14 @@ a:hover {
 
 .brand-text-wrap {
   display: grid;
+  align-content: center;
   line-height: 1.15;
+}
+
+.brand {
+  min-width: 0;
+  display: flex;
+  align-items: center;
 }
 
 .header-top-actions {
@@ -377,19 +348,6 @@ a:hover {
 }
 
 /* ── Header nav band ── */
-.header-nav {
-  background: var(--header-nav-bg);
-  border-bottom: 1px solid var(--header-nav-border);
-}
-
-.header-nav-inner {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 1rem;
-  height: 52px;
-}
-
 .mobile-menu-button {
   display: none;
   border: 1px solid var(--header-nav-border);
@@ -405,6 +363,10 @@ a:hover {
 
 .primary-nav {
   flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .nav-list {
@@ -412,14 +374,16 @@ a:hover {
   padding: 0;
   list-style: none;
   display: flex;
-  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  height: auto;
 }
 
 .nav-group-item {
   list-style: none;
   position: relative;
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .nav-top-link,
@@ -427,7 +391,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0 1rem;
+  padding: 0.45rem 0.9rem;
   color: var(--header-nav-text);
   font-weight: 600;
   font-size: 0.9rem;
@@ -437,23 +401,19 @@ a:hover {
   font-family: var(--font-sans);
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 3px solid transparent;
-  transition:
-    background 0.15s,
-    border-color 0.15s;
+  border-bottom: 0;
+  transition: background 0.15s;
 }
 
 .nav-top-link:hover,
 .nav-group-toggle:hover {
   background: var(--header-nav-hover);
   text-decoration: none;
-  border-bottom-color: var(--header-nav-text);
 }
 
 .nav-top-link.is-current,
 .nav-group-toggle.is-current {
   background: var(--header-nav-hover);
-  border-bottom-color: var(--color-accent);
 }
 
 .nav-caret {
@@ -473,7 +433,6 @@ a:hover {
     padding: 0.35rem 0;
     list-style: none;
     border: 1px solid var(--color-border);
-    border-top: 3px solid var(--color-accent);
     border-radius: 0;
     background: var(--color-surface);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -511,15 +470,11 @@ a:hover {
 .nav-cta-wrap {
   display: flex;
   align-items: center;
-  padding: 0 0 0 0.5rem;
+  padding: 0;
+  margin-left: 0.5rem;
 }
 
 @media (min-width: 1024px) {
-  .nav-list > .nav-group-item:first-child > .nav-top-link,
-  .nav-list > .nav-group-item:first-child > .nav-group-toggle {
-    margin-left: -1rem;
-  }
-
   .nav-cta-wrap {
     padding: 0;
   }
@@ -545,11 +500,15 @@ a:hover {
 }
 
 /* Focus rings */
-.theme-select:focus,
 .nav-group-toggle:focus,
 .nav-top-link:focus,
 .primary-cta:focus,
 .mobile-menu-button:focus {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 60%, transparent);
+  outline-offset: 2px;
+}
+
+.footer-theme-select:focus {
   outline: 2px solid color-mix(in srgb, var(--color-accent) 60%, transparent);
   outline-offset: 2px;
 }
@@ -597,10 +556,85 @@ h2 {
 
 .about-page-hero {
   width: 100%;
-  height: 250px;
+  height: min(45vh, 540px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.about-page .about-page-hero--v23,
+.about-page .about-page-hero--v36 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.about-page .about-page-hero--v48 {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-page .about-page-hero--v48 .about-page-hero-text {
+  position: absolute;
+  inset: 48% 0 auto 0;
+  transform: translateY(-50%);
+  z-index: 4;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 1.6rem + 3.4vw, 5.6rem);
+  letter-spacing: 0.08em;
+  color: transparent;
+  -webkit-text-stroke: 1px
+    color-mix(in srgb, var(--color-surface) 70%, var(--color-accent) 30%);
+  text-shadow: none;
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.about-page .about-page-hero--v36 {
+  box-shadow:
+    inset 0.55rem 0.55rem 0 0 color-mix(in srgb, var(--color-surface) 80%, transparent),
+    inset -0.55rem -0.55rem 0 0 color-mix(in srgb, var(--color-text) 30%, transparent);
+}
+
+.about-page .about-page-hero--v23::before,
+.about-page .about-page-hero--v23::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.about-page .about-page-hero--v23::before {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-text) 48%, transparent),
+    transparent 36%
+  );
+}
+
+.about-page .about-page-hero--v23::after {
+  inset: auto 0 0 0;
+  height: 16px;
+  background:
+    linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-accent) 80%, transparent),
+        color-mix(in srgb, var(--color-accent) 80%, transparent)
+      )
+      0 0 / 100% 2px no-repeat,
+    linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-surface) 72%, transparent),
+        color-mix(in srgb, var(--color-surface) 72%, transparent)
+      )
+      0 7px / 100% 1px no-repeat,
+    linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-accent) 45%, transparent),
+        color-mix(in srgb, var(--color-accent) 45%, transparent)
+      )
+      0 13px / 100% 1px no-repeat;
 }
 
 .about-page .tools-page-content > h1,
@@ -651,12 +685,123 @@ h2 {
   background-position: center center;
 }
 
-@media (min-width: 768px) {
-  .buy-home-page .content-page-hero,
-  .commercial-financing-page .content-page-hero,
-  .refinance-page .content-page-hero {
-    height: 450px;
-  }
+.commercial-financing-page .content-page-hero--v03,
+.buy-home-page .content-page-hero--v03,
+.refinance-page .content-page-hero--v03 {
+  position: relative;
+  isolation: isolate;
+}
+
+.commercial-financing-page .content-page-hero--v03::before,
+.commercial-financing-page .content-page-hero--v03::after,
+.buy-home-page .content-page-hero--v03::before,
+.buy-home-page .content-page-hero--v03::after,
+.refinance-page .content-page-hero--v03::before,
+.refinance-page .content-page-hero--v03::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.commercial-financing-page .content-page-hero--v03::before,
+.buy-home-page .content-page-hero--v03::before,
+.refinance-page .content-page-hero--v03::before {
+  inset: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 58%, transparent);
+  z-index: 2;
+}
+
+.commercial-financing-page .content-page-hero--v03::after,
+.buy-home-page .content-page-hero--v03::after,
+.refinance-page .content-page-hero--v03::after {
+  inset: 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+  z-index: 3;
+}
+
+.commercial-financing-page .content-page-hero--v37 .content-page-hero-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 36%, transparent),
+      transparent 36%
+    ),
+    repeating-radial-gradient(
+      circle at 10% 10%,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+
+.buy-home-page .content-page-hero--v42,
+.refinance-page .content-page-hero--v42 {
+  position: relative;
+  isolation: isolate;
+}
+
+.buy-home-page .content-page-hero--v44,
+.refinance-page .content-page-hero--v44 {
+  position: relative;
+  isolation: isolate;
+}
+
+.buy-home-page .content-page-hero--v44 .content-page-hero-title,
+.refinance-page .content-page-hero--v44 .content-page-hero-title {
+  position: absolute;
+  inset: 50% 0 auto 0;
+  transform: translateY(-50%);
+  z-index: 4;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 1rem + 1.6vw, 2.2rem);
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--color-surface) 74%, var(--color-accent) 26%);
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.34),
+    0 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.buy-home-page .content-page-hero--v42::before,
+.refinance-page .content-page-hero--v42::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 30%, transparent),
+      transparent 36%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 16px,
+      transparent 16px,
+      transparent 44px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 16px,
+      transparent 16px,
+      transparent 44px
+    );
+}
+
+.buy-home-page .content-page-hero,
+.commercial-financing-page .content-page-hero,
+.refinance-page .content-page-hero {
+  height: min(45vh, 540px);
 }
 
 .content-page-section {
@@ -840,39 +985,17 @@ h2 {
 /* Mobile nav */
 @media (max-width: 1023px) {
   .header-spacer {
-    height: 116px; /* 64px identity + 52px nav, no scroll shrink on mobile */
-  }
-
-  .site-header--scrolled + .header-spacer {
-    height: 116px;
+    height: 64px;
   }
 
   .header-top-inner {
-    height: 64px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     transition: none;
-  }
-
-  /* Prevent scroll-shrink on mobile — always compact */
-  .site-header--scrolled .header-top-inner {
-    height: 64px;
-  }
-
-  .site-header--scrolled .header-top-inner .logo-mark {
-    width: 2.4rem;
-    height: 2.4rem;
-    font-size: 0.8rem;
-  }
-
-  .site-header--scrolled .brand-text-wrap strong {
-    font-size: 1.05rem;
   }
 
   .mobile-menu-button {
     display: inline-flex;
-  }
-
-  .header-nav {
-    position: relative;
   }
 
   .primary-nav {
@@ -947,10 +1070,6 @@ h2 {
     display: none;
   }
 
-  .header-nav-inner {
-    height: 48px;
-  }
-
   .home-sections-grid {
     grid-template-columns: 1fr;
   }
@@ -974,6 +1093,10 @@ h2 {
   border-bottom: 1px solid var(--color-border);
   padding: 2rem;
   box-shadow: var(--shadow-soft);
+}
+
+.site-main section.home-page {
+  padding-top: 0;
 }
 
 /* Inner content of each section is capped at 1500px and centered */
@@ -1167,6 +1290,30 @@ h2 {
   text-decoration: none;
 }
 
+.footer-theme-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: var(--footer-muted);
+}
+
+.footer-theme-select {
+  border: 1px solid color-mix(in srgb, var(--footer-text) 35%, transparent);
+  border-radius: var(--radius-button);
+  background: color-mix(in srgb, var(--footer-bg) 75%, white 25%);
+  color: var(--footer-heading);
+  padding: 0.28rem 0.45rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.footer-theme-select option {
+  background: var(--footer-bg);
+  color: var(--footer-heading);
+}
+
 .footer-licensing {
   margin-top: 1.5rem;
 }
@@ -1273,7 +1420,13 @@ h2 {
   background: var(--color-surface);
   padding: 0.65rem;
   position: sticky;
-  top: calc(124px + var(--tools-sidebar-stick-gap));
+  top: calc(72px + var(--tools-sidebar-stick-gap));
+}
+
+@media (max-width: 1023px) {
+  .tools-page-sidebar {
+    top: calc(64px + var(--tools-sidebar-stick-gap));
+  }
 }
 
 .tools-page-sidebar h2 {
@@ -1338,15 +1491,85 @@ h2 {
 
 .calculator-page-hero {
   margin-top: 1rem;
+  position: relative;
+  isolation: isolate;
   width: 100%;
   height: 350px;
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 115%;
-  aspect-ratio: 3.2 / 1;
-  min-height: clamp(150px, 18vw, 250px);
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 40%, transparent),
+    inset 1px 1px 0 0 color-mix(in srgb, var(--color-surface) 80%, transparent),
+    inset -1px -1px 0 0 color-mix(in srgb, var(--color-text) 32%, transparent);
+}
+
+.calculator-page-hero::before,
+.calculator-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.calculator-page-hero::before {
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 50%, transparent) 0%,
+      transparent 36%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 32%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 32%, transparent) 1px,
+      transparent 1px,
+      transparent 26px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+}
+
+.calculator-page-hero::after {
+  background:
+    radial-gradient(
+      130% 74% at 50% 118%,
+      color-mix(in srgb, var(--color-surface) 35%, transparent) 0,
+      transparent 62%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 52%, transparent) 0,
+      transparent 38%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-surface) 80%, transparent),
+      color-mix(in srgb, var(--color-surface) 80%, transparent)
+    ) 0.55rem 0.55rem / calc(100% - 1.1rem) 1px no-repeat,
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-surface) 74%, transparent),
+      color-mix(in srgb, var(--color-surface) 74%, transparent)
+    ) 0.55rem 0.55rem / 1px calc(100% - 1.1rem) no-repeat,
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-text) 30%, transparent),
+      color-mix(in srgb, var(--color-text) 30%, transparent)
+    ) calc(100% - 0.55rem) 0.55rem / 1px calc(100% - 1.1rem) no-repeat,
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-text) 30%, transparent),
+      color-mix(in srgb, var(--color-text) 30%, transparent)
+    ) 0.55rem calc(100% - 0.55rem) / calc(100% - 1.1rem) 1px no-repeat;
 }
 
 .calculator-grid {
@@ -1503,11 +1726,6 @@ h2 {
 
   .content-page-section {
     padding: 0.85rem 0.9rem;
-  }
-
-  .calculator-page-hero {
-    aspect-ratio: 2.25 / 1;
-    min-height: clamp(130px, 36vw, 210px);
   }
 
   .calculator-form-grid {

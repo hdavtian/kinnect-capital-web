@@ -18,7 +18,11 @@ function MortgageToolsHub() {
                 className="tools-hub-tile"
                 aria-label={tool.imageAlt}
               >
-                <img src={assetPath(tool.imageSrc)} alt={tool.imageAlt} />
+                <span
+                  className="tools-hub-tile-media"
+                  style={{ backgroundImage: `url(${assetPath(tool.imageSrc)})` }}
+                  aria-hidden="true"
+                />
               </Link>
             ))}
           </div>

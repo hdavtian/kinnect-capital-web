@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   FaEnvelope,
   FaFacebookF,
@@ -11,7 +12,36 @@ import { ROUTES } from "../../routes";
 
 const currentYear = new Date().getFullYear();
 
+type ThemeName =
+  | "classic"
+  | "usc-subtle"
+  | "warm"
+  | "coastal"
+  | "investment-green";
+
+const THEME_STORAGE_KEY = "kinnect-theme";
+
 function Footer() {
+  const [theme, setTheme] = useState<ThemeName>(() => {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    if (
+      stored === "warm" ||
+      stored === "coastal" ||
+      stored === "classic" ||
+      stored === "usc-subtle" ||
+      stored === "investment-green"
+    ) {
+      return stored;
+    }
+
+    return "classic";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
+
   return (
     <footer className="site-footer">
       {/* ── Main body: 4-column link grid ── */}
@@ -152,6 +182,20 @@ function Footer() {
                 <Link to={ROUTES.valuation}>Home Valuation</Link>
               </li>
             </ul>
+            <label className="footer-theme-select-wrap">
+              <span>Theme</span>
+              <select
+                className="footer-theme-select"
+                value={theme}
+                onChange={(event) => setTheme(event.target.value as ThemeName)}
+              >
+                <option value="classic">Classic</option>
+                <option value="usc-subtle">USC Subtle</option>
+                <option value="warm">Warm</option>
+                <option value="coastal">Coastal</option>
+                <option value="investment-green">Investment Green</option>
+              </select>
+            </label>
             <div className="footer-licensing">
               <p>{footerContent.nmlsCompany}</p>
               <p>{footerContent.dreCompany}</p>

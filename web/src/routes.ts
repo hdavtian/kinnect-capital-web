@@ -22,6 +22,7 @@ export const ROUTES = {
   privacy: "/privacy-policy",
   terms: "/terms-of-use",
   ornamentPicker: "/dev/ornament-picker",
+  bannerVariants: "/dev/banner-variants",
 } as const;
 
 export type RouteValue = (typeof ROUTES)[keyof typeof ROUTES];
