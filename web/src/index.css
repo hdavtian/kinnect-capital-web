@@ -562,6 +562,81 @@ h2 {
   background-position: center center;
 }
 
+.about-page .about-page-hero--v23,
+.about-page .about-page-hero--v36 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.about-page .about-page-hero--v48 {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-page .about-page-hero--v48 .about-page-hero-text {
+  position: absolute;
+  inset: 48% 0 auto 0;
+  transform: translateY(-50%);
+  z-index: 4;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 1.6rem + 3.4vw, 5.6rem);
+  letter-spacing: 0.08em;
+  color: transparent;
+  -webkit-text-stroke: 1px
+    color-mix(in srgb, var(--color-surface) 70%, var(--color-accent) 30%);
+  text-shadow: none;
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.about-page .about-page-hero--v36 {
+  box-shadow:
+    inset 0.55rem 0.55rem 0 0 color-mix(in srgb, var(--color-surface) 80%, transparent),
+    inset -0.55rem -0.55rem 0 0 color-mix(in srgb, var(--color-text) 30%, transparent);
+}
+
+.about-page .about-page-hero--v23::before,
+.about-page .about-page-hero--v23::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.about-page .about-page-hero--v23::before {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-text) 48%, transparent),
+    transparent 36%
+  );
+}
+
+.about-page .about-page-hero--v23::after {
+  inset: auto 0 0 0;
+  height: 16px;
+  background:
+    linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-accent) 80%, transparent),
+        color-mix(in srgb, var(--color-accent) 80%, transparent)
+      )
+      0 0 / 100% 2px no-repeat,
+    linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-surface) 72%, transparent),
+        color-mix(in srgb, var(--color-surface) 72%, transparent)
+      )
+      0 7px / 100% 1px no-repeat,
+    linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-accent) 45%, transparent),
+        color-mix(in srgb, var(--color-accent) 45%, transparent)
+      )
+      0 13px / 100% 1px no-repeat;
+}
+
 .about-page .tools-page-content > h1,
 .about-page > h1 {
   color: var(--color-accent);
@@ -608,6 +683,119 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.commercial-financing-page .content-page-hero--v03,
+.buy-home-page .content-page-hero--v03,
+.refinance-page .content-page-hero--v03 {
+  position: relative;
+  isolation: isolate;
+}
+
+.commercial-financing-page .content-page-hero--v03::before,
+.commercial-financing-page .content-page-hero--v03::after,
+.buy-home-page .content-page-hero--v03::before,
+.buy-home-page .content-page-hero--v03::after,
+.refinance-page .content-page-hero--v03::before,
+.refinance-page .content-page-hero--v03::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.commercial-financing-page .content-page-hero--v03::before,
+.buy-home-page .content-page-hero--v03::before,
+.refinance-page .content-page-hero--v03::before {
+  inset: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 58%, transparent);
+  z-index: 2;
+}
+
+.commercial-financing-page .content-page-hero--v03::after,
+.buy-home-page .content-page-hero--v03::after,
+.refinance-page .content-page-hero--v03::after {
+  inset: 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+  z-index: 3;
+}
+
+.commercial-financing-page .content-page-hero--v37 .content-page-hero-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 36%, transparent),
+      transparent 36%
+    ),
+    repeating-radial-gradient(
+      circle at 10% 10%,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+
+.buy-home-page .content-page-hero--v42,
+.refinance-page .content-page-hero--v42 {
+  position: relative;
+  isolation: isolate;
+}
+
+.buy-home-page .content-page-hero--v44,
+.refinance-page .content-page-hero--v44 {
+  position: relative;
+  isolation: isolate;
+}
+
+.buy-home-page .content-page-hero--v44 .content-page-hero-title,
+.refinance-page .content-page-hero--v44 .content-page-hero-title {
+  position: absolute;
+  inset: 50% 0 auto 0;
+  transform: translateY(-50%);
+  z-index: 4;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 1rem + 1.6vw, 2.2rem);
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--color-surface) 74%, var(--color-accent) 26%);
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.34),
+    0 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.buy-home-page .content-page-hero--v42::before,
+.refinance-page .content-page-hero--v42::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 30%, transparent),
+      transparent 36%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 16px,
+      transparent 16px,
+      transparent 44px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 16px,
+      transparent 16px,
+      transparent 44px
+    );
 }
 
 .buy-home-page .content-page-hero,
@@ -1303,6 +1491,8 @@ h2 {
 
 .calculator-page-hero {
   margin-top: 1rem;
+  position: relative;
+  isolation: isolate;
   width: 100%;
   height: 350px;
   border: 1px solid var(--color-border);
@@ -1310,6 +1500,76 @@ h2 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 40%, transparent),
+    inset 1px 1px 0 0 color-mix(in srgb, var(--color-surface) 80%, transparent),
+    inset -1px -1px 0 0 color-mix(in srgb, var(--color-text) 32%, transparent);
+}
+
+.calculator-page-hero::before,
+.calculator-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.calculator-page-hero::before {
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 50%, transparent) 0%,
+      transparent 36%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 32%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 32%, transparent) 1px,
+      transparent 1px,
+      transparent 26px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+}
+
+.calculator-page-hero::after {
+  background:
+    radial-gradient(
+      130% 74% at 50% 118%,
+      color-mix(in srgb, var(--color-surface) 35%, transparent) 0,
+      transparent 62%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 52%, transparent) 0,
+      transparent 38%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-surface) 80%, transparent),
+      color-mix(in srgb, var(--color-surface) 80%, transparent)
+    ) 0.55rem 0.55rem / calc(100% - 1.1rem) 1px no-repeat,
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-surface) 74%, transparent),
+      color-mix(in srgb, var(--color-surface) 74%, transparent)
+    ) 0.55rem 0.55rem / 1px calc(100% - 1.1rem) no-repeat,
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-text) 30%, transparent),
+      color-mix(in srgb, var(--color-text) 30%, transparent)
+    ) calc(100% - 0.55rem) 0.55rem / 1px calc(100% - 1.1rem) no-repeat,
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-text) 30%, transparent),
+      color-mix(in srgb, var(--color-text) 30%, transparent)
+    ) 0.55rem calc(100% - 0.55rem) / calc(100% - 1.1rem) 1px no-repeat;
 }
 
 .calculator-grid {

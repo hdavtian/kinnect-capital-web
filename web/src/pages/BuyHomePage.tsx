@@ -15,13 +15,17 @@ function BuyHomePage() {
 
           <figure className="page-hero-image content-page-hero-frame">
             <div
-              className="content-page-hero"
+              className="content-page-hero content-page-hero--v42 content-page-hero--v03 content-page-hero--v44"
               style={{
                 backgroundImage: `url(${assetPath("/images/buy-a-home.avif")})`,
               }}
               role="img"
               aria-label="Buy a home planning visual placeholder"
-            />
+            >
+              <span className="content-page-hero-title" aria-hidden="true">
+                BUY A HOME
+              </span>
+            </div>
           </figure>
 
           {overviewSection ? (

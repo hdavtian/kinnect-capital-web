@@ -11,13 +11,17 @@ function AboutPage() {
           <h1>About Kinnect Capital</h1>
           <figure className="page-hero-image about-page-hero-frame">
             <div
-              className="about-page-hero about-page-hero--top"
+              className="about-page-hero about-page-hero--top about-page-hero--v23 about-page-hero--v36 about-page-hero--v48"
               style={{
                 backgroundImage: `url(${assetPath("/images/about/about.avif")})`,
               }}
               role="img"
               aria-label="About Kinnect Capital visual"
-            />
+            >
+              <span className="about-page-hero-text" aria-hidden="true">
+                KINNECT
+              </span>
+            </div>
           </figure>
           {aboutSections.map((section) => (
             <article

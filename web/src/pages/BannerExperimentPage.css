@@ -1,0 +1,1042 @@
+.banner-lab-page {
+  width: min(100%, var(--inner-max-width));
+  margin: 0 auto;
+  padding: 0 2rem 1rem;
+}
+
+.banner-lab-layout {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.banner-lab-content {
+  min-width: 0;
+}
+
+.banner-lab-nav {
+  position: sticky;
+  top: calc(72px + 0.75rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 0.65rem;
+  max-height: calc(100vh - 88px);
+  overflow: auto;
+  z-index: 2;
+}
+
+.banner-lab-nav p {
+  margin: 0 0 0.45rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.banner-lab-nav-group + .banner-lab-nav-group {
+  margin-top: 0.5rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.banner-lab-nav-group h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.banner-lab-nav-group h3 a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.banner-lab-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.banner-lab-nav a {
+  display: block;
+  border: 1px solid transparent;
+  padding: 0.28rem 0.35rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.banner-lab-nav a:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+.banner-lab-header h1 {
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.banner-lab-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.banner-lab-header p {
+  margin: 0.45rem 0 0;
+  color: var(--color-text-muted);
+  max-width: 72ch;
+}
+
+.banner-lab-source {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.banner-lab-section {
+  margin-top: 0.95rem;
+}
+
+.banner-lab-section-header {
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 86%, var(--color-surface-alt) 14%);
+  padding: 0.62rem 0.75rem;
+}
+
+.banner-lab-section-header h2 {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 1.03rem;
+}
+
+.banner-lab-section-header p {
+  margin: 0.25rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.banner-lab-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.banner-lab-content {
+  margin-left: 0;
+  min-width: 0;
+}
+
+.banner-lab-card {
+  scroll-margin-top: 86px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 0.7rem;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.banner-lab-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-lab-id {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.3rem;
+  padding: 0.2rem 0.42rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.banner-lab-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--color-text);
+}
+
+.banner-lab-card p {
+  margin: 0.55rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.banner-lab-preview {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  background-image: var(--banner-image);
+  background-size: cover;
+  background-position: center center;
+  isolation: isolate;
+}
+
+.banner-lab-preview::before,
+.banner-lab-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.banner-lab-slogan {
+  position: absolute;
+  inset: auto 0 0.8rem 0;
+  z-index: 3;
+  text-align: center;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 0.6rem + 0.35vw, 0.95rem);
+  color: color-mix(in srgb, var(--color-surface) 72%, var(--color-accent));
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  opacity: 0.32;
+}
+
+.banner-lab-slogan--lg {
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.45rem);
+  letter-spacing: 0.12em;
+}
+
+.banner-lab-slogan--xl {
+  font-size: clamp(1.25rem, 1rem + 1.6vw, 2.2rem);
+  letter-spacing: 0.08em;
+  opacity: 0.46;
+}
+
+.banner-lab-slogan--xxl {
+  font-size: clamp(1.6rem, 1.2rem + 2.2vw, 3rem);
+  letter-spacing: 0.1em;
+  opacity: 0.52;
+}
+
+.banner-lab-slogan--hero {
+  font-size: clamp(2.1rem, 1.6rem + 3.4vw, 5.6rem);
+  letter-spacing: 0.08em;
+}
+
+.banner-lab-slogan--center {
+  inset: 50% 0 auto 0;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.banner-lab-slogan--top-left {
+  inset: 1rem auto auto 1rem;
+  text-align: left;
+  max-width: min(72%, 18ch);
+  line-height: 1.05;
+}
+
+.banner-lab-slogan--bottom-band {
+  inset: auto 0 0.35rem 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.32);
+}
+
+.banner-lab-slogan--vertical {
+  inset: 0.65rem auto 0.65rem 0.65rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  letter-spacing: 0.16em;
+}
+
+.banner-lab-slogan--two-line {
+  inset: auto auto 0.8rem 1rem;
+  text-align: left;
+  white-space: pre-line;
+  line-height: 0.98;
+  max-width: min(78%, 20ch);
+}
+
+.banner-lab-slogan--ghost {
+  inset: 48% 0 auto 0;
+  transform: translateY(-50%);
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-surface) 70%, var(--color-accent) 30%);
+  text-shadow: none;
+  opacity: 0.42;
+}
+
+.variant-trust-vignette::before {
+  background: radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      color-mix(in srgb, var(--color-text) 32%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 55%, transparent) 0%,
+      transparent 35%
+    );
+}
+
+.variant-diagonal-tint::before {
+  background: linear-gradient(
+    122deg,
+    color-mix(in srgb, var(--color-accent) 42%, transparent) 5%,
+    transparent 42%,
+    color-mix(in srgb, var(--color-accent) 26%, transparent) 100%
+  );
+}
+
+.variant-double-frame::before {
+  inset: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 58%, transparent);
+}
+
+.variant-double-frame::after {
+  inset: 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+.variant-corner-brackets::before {
+  inset: 0.6rem;
+  background:
+    linear-gradient(to right, var(--color-accent), var(--color-accent)) left top / 48px 2px no-repeat,
+    linear-gradient(to bottom, var(--color-accent), var(--color-accent)) left top / 2px 48px no-repeat,
+    linear-gradient(to left, var(--color-accent), var(--color-accent)) right top / 48px 2px no-repeat,
+    linear-gradient(to bottom, var(--color-accent), var(--color-accent)) right top / 2px 48px no-repeat,
+    linear-gradient(to right, var(--color-accent), var(--color-accent)) left bottom / 48px 2px no-repeat,
+    linear-gradient(to top, var(--color-accent), var(--color-accent)) left bottom / 2px 48px no-repeat,
+    linear-gradient(to left, var(--color-accent), var(--color-accent)) right bottom / 48px 2px no-repeat,
+    linear-gradient(to top, var(--color-accent), var(--color-accent)) right bottom / 2px 48px no-repeat;
+  opacity: 0.62;
+}
+
+.variant-ledger-grid::before {
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 50%, transparent) 0%,
+      transparent 36%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 32%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 32%, transparent) 1px,
+      transparent 1px,
+      transparent 26px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+}
+
+.variant-spotlight-fade::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      color-mix(in srgb, var(--color-surface) 6%, transparent) 0%,
+      color-mix(in srgb, var(--color-text) 48%, transparent) 100%
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-text) 38%, transparent) 0%,
+      transparent 28%,
+      transparent 72%,
+      color-mix(in srgb, var(--color-text) 38%, transparent) 100%
+    );
+}
+
+.variant-top-ribbon::before {
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent) 45%, transparent) 0,
+      color-mix(in srgb, var(--color-accent) 22%, transparent) 18%,
+      transparent 32%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 52%, transparent) 0,
+      transparent 36%
+    );
+}
+
+.variant-top-ribbon::after {
+  inset: 0;
+  border-top: 2px solid color-mix(in srgb, var(--color-accent) 68%, transparent);
+}
+
+.variant-glass-panel::before {
+  inset: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 44%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-surface) 15%, transparent) 0,
+    color-mix(in srgb, var(--color-surface) 5%, transparent) 62%,
+    transparent 100%
+  );
+  backdrop-filter: blur(1px);
+}
+
+.variant-bottom-glow::before {
+  background:
+    radial-gradient(
+      ellipse at 50% 110%,
+      color-mix(in srgb, var(--color-accent) 55%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent) 10%, transparent) 45%,
+      transparent 70%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 48%, transparent) 0,
+      transparent 38%
+    );
+}
+
+.variant-arc-mask::before {
+  background:
+    radial-gradient(
+      130% 74% at 50% 118%,
+      color-mix(in srgb, var(--color-surface) 35%, transparent) 0,
+      transparent 62%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 52%, transparent) 0,
+      transparent 38%
+    );
+}
+
+.variant-arc-mask::after {
+  inset: 0.7rem;
+  border-radius: 0 0 40% 40% / 0 0 22% 22%;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.variant-allaround-soft::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 46%,
+      color-mix(in srgb, var(--color-text) 22%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 28%, transparent),
+      transparent 32%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-text) 28%, transparent),
+      transparent 32%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-text) 28%, transparent),
+      transparent 30%
+    ),
+    linear-gradient(
+      to left,
+      color-mix(in srgb, var(--color-text) 28%, transparent),
+      transparent 30%
+    );
+}
+
+.variant-allaround-balanced::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 42%,
+      color-mix(in srgb, var(--color-text) 30%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 38%, transparent),
+      transparent 35%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-text) 38%, transparent),
+      transparent 35%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-text) 36%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      to left,
+      color-mix(in srgb, var(--color-text) 36%, transparent),
+      transparent 34%
+    );
+}
+
+.variant-allaround-heavy::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 36%,
+      color-mix(in srgb, var(--color-text) 44%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 55%, transparent),
+      transparent 42%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-text) 55%, transparent),
+      transparent 42%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-text) 52%, transparent),
+      transparent 40%
+    ),
+    linear-gradient(
+      to left,
+      color-mix(in srgb, var(--color-text) 52%, transparent),
+      transparent 40%
+    );
+}
+
+.variant-allaround-cool::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 42%,
+      color-mix(in srgb, var(--color-accent) 30%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-accent) 38%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent) 30%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-accent) 26%, transparent),
+      transparent 32%
+    ),
+    linear-gradient(
+      to left,
+      color-mix(in srgb, var(--color-accent) 26%, transparent),
+      transparent 32%
+    );
+}
+
+.variant-allaround-warm::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 44%,
+      color-mix(in srgb, #9f7449 34%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, #9f7449 36%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, #9f7449 30%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, #9f7449 24%, transparent),
+      transparent 32%
+    ),
+    linear-gradient(
+      to left,
+      color-mix(in srgb, #9f7449 24%, transparent),
+      transparent 32%
+    );
+}
+
+.variant-oval-window::before {
+  background: radial-gradient(
+      ellipse 55% 45% at 50% 48%,
+      transparent 52%,
+      color-mix(in srgb, var(--color-text) 42%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 46%, transparent),
+      transparent 44%
+    );
+}
+
+.variant-diamond-fade::before {
+  background:
+    linear-gradient(45deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 35%),
+    linear-gradient(135deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 35%),
+    linear-gradient(225deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 35%),
+    linear-gradient(315deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 35%),
+    radial-gradient(circle at center, transparent 28%, color-mix(in srgb, var(--color-text) 32%, transparent) 100%);
+}
+
+.variant-soft-ring::before {
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--color-surface) 1%, transparent) 18%,
+    color-mix(in srgb, var(--color-text) 30%, transparent) 62%,
+    color-mix(in srgb, var(--color-text) 45%, transparent) 100%
+  );
+}
+
+.variant-center-clear::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 30%,
+      color-mix(in srgb, var(--color-text) 47%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 42%, transparent),
+      transparent 35%
+    );
+}
+
+.variant-corner-fade::before {
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 40%),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 40%),
+    radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 40%),
+    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 40%);
+}
+
+.variant-inset-financial::before {
+  inset: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-text) 36%, transparent), transparent 34%);
+}
+
+.variant-side-rails::before {
+  background:
+    linear-gradient(to right, color-mix(in srgb, var(--color-accent) 42%, transparent), transparent 13%),
+    linear-gradient(to left, color-mix(in srgb, var(--color-accent) 42%, transparent), transparent 13%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 34%, transparent), transparent 34%);
+}
+
+.variant-side-rails::after {
+  inset: 0.65rem;
+  border-left: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+  border-right: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
+
+.variant-triple-rule::before {
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-text) 48%, transparent), transparent 36%);
+}
+
+.variant-triple-rule::after {
+  inset: auto 0 0 0;
+  height: 16px;
+  background:
+    linear-gradient(to right, color-mix(in srgb, var(--color-accent) 80%, transparent), color-mix(in srgb, var(--color-accent) 80%, transparent)) 0 0 / 100% 2px no-repeat,
+    linear-gradient(to right, color-mix(in srgb, var(--color-surface) 72%, transparent), color-mix(in srgb, var(--color-surface) 72%, transparent)) 0 7px / 100% 1px no-repeat,
+    linear-gradient(to right, color-mix(in srgb, var(--color-accent) 45%, transparent), color-mix(in srgb, var(--color-accent) 45%, transparent)) 0 13px / 100% 1px no-repeat;
+}
+
+.variant-ledger-bars::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 48%, transparent), transparent 38%),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 25%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 25%, transparent) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+}
+
+.variant-blueprint-hatch::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 38%),
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--color-accent) 14%, transparent) 0,
+      color-mix(in srgb, var(--color-accent) 14%, transparent) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+}
+
+.variant-frosted-edge::before {
+  background:
+    radial-gradient(ellipse at center, transparent 46%, color-mix(in srgb, var(--color-surface) 33%, transparent) 100%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 24%, transparent), transparent 32%);
+}
+
+.variant-light-leak::before {
+  background:
+    radial-gradient(circle at 5% 10%, color-mix(in srgb, var(--color-accent) 45%, transparent), transparent 28%),
+    radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--color-accent) 40%, transparent), transparent 26%),
+    radial-gradient(circle at 6% 90%, color-mix(in srgb, var(--color-accent) 32%, transparent), transparent 24%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 34%, transparent), transparent 36%);
+}
+
+.variant-dark-film::before {
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 58%, transparent), transparent 24%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 58%, transparent), transparent 24%);
+}
+
+.variant-dark-film::after {
+  inset: 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 45%, transparent);
+}
+
+.variant-spotlight-frame::before {
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--color-surface) 0%, transparent) 26%, color-mix(in srgb, var(--color-text) 42%, transparent) 100%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 36%);
+}
+
+.variant-spotlight-frame::after {
+  inset: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+
+.variant-arc-dual::before {
+  background:
+    radial-gradient(120% 50% at 50% -12%, color-mix(in srgb, var(--color-text) 45%, transparent), transparent 66%),
+    radial-gradient(120% 50% at 50% 112%, color-mix(in srgb, var(--color-text) 45%, transparent), transparent 66%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 30%, transparent), transparent 32%);
+}
+
+.variant-split-tone::before {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-accent) 30%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent) 6%, transparent) 50%,
+      color-mix(in srgb, var(--color-text) 18%, transparent) 100%
+    ),
+    radial-gradient(ellipse at center, transparent 44%, color-mix(in srgb, var(--color-text) 32%, transparent) 100%);
+}
+
+.variant-cinematic-bands::before {
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 60%, transparent), transparent 22%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 60%, transparent), transparent 22%);
+}
+
+.variant-x-cross::before {
+  background:
+    linear-gradient(45deg, color-mix(in srgb, var(--color-text) 30%, transparent), transparent 38%),
+    linear-gradient(135deg, color-mix(in srgb, var(--color-text) 30%, transparent), transparent 38%),
+    linear-gradient(225deg, color-mix(in srgb, var(--color-text) 30%, transparent), transparent 38%),
+    linear-gradient(315deg, color-mix(in srgb, var(--color-text) 30%, transparent), transparent 38%);
+}
+
+.variant-rounded-window {
+  -webkit-mask-image: radial-gradient(140% 110% at 50% 52%, #000 58%, rgba(0, 0, 0, 0.35) 78%, rgba(0, 0, 0, 0.05) 100%);
+  mask-image: radial-gradient(140% 110% at 50% 52%, #000 58%, rgba(0, 0, 0, 0.35) 78%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.variant-rounded-window::before {
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-text) 36%, transparent), transparent 36%);
+}
+
+.variant-perforated-edge::before {
+  background:
+    radial-gradient(circle at 0 50%, color-mix(in srgb, var(--color-surface) 55%, transparent) 0 6px, transparent 7px),
+    radial-gradient(circle at 100% 50%, color-mix(in srgb, var(--color-surface) 55%, transparent) 0 6px, transparent 7px),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 36%, transparent), transparent 34%);
+  background-size: 20px 20px, 20px 20px, auto;
+  background-repeat: repeat-y, repeat-y, no-repeat;
+  background-position: left center, right center, center;
+}
+
+.variant-embossed-border::before {
+  inset: 0.55rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-surface) 80%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--color-surface) 74%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-text) 32%, transparent), transparent 34%);
+}
+
+.variant-noise-veil::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 36%, transparent), transparent 36%),
+    repeating-radial-gradient(
+      circle at 10% 10%,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 0.95;
+}
+
+.variant-checker-fade::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 34%, transparent), transparent 36%),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 12%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 12%, transparent) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 12%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 12%, transparent) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+}
+
+.variant-checker-fade-low::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 32%, transparent), transparent 36%),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 14px,
+      transparent 14px,
+      transparent 34px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 10%, transparent) 14px,
+      transparent 14px,
+      transparent 34px
+    );
+}
+
+.variant-checker-fade-ultra::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 30%, transparent), transparent 36%),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 16px,
+      transparent 16px,
+      transparent 44px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 8%, transparent) 16px,
+      transparent 16px,
+      transparent 44px
+    );
+}
+
+.variant-halo-curtains::before {
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 56%),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 30%, transparent 70%, color-mix(in srgb, var(--color-text) 42%, transparent));
+}
+
+.variant-signature-blend::before {
+  background:
+    radial-gradient(ellipse at center, transparent 40%, color-mix(in srgb, var(--color-text) 36%, transparent) 100%),
+    linear-gradient(120deg, color-mix(in srgb, var(--color-accent) 26%, transparent) 0, transparent 35%, color-mix(in srgb, var(--color-accent) 20%, transparent) 100%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 44%, transparent), transparent 36%);
+}
+
+.variant-signature-blend::after {
+  inset: 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 58%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-surface) 38%, transparent);
+}
+
+.variant-text-monument-bottom::before {
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 64%, transparent), transparent 42%),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 26%, transparent), transparent 32%);
+}
+
+.variant-text-monument-center::before {
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--color-text) 22%, transparent), transparent 58%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 44%, transparent), transparent 40%);
+}
+
+.variant-text-vertical-side::before {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--color-text) 58%, transparent), transparent 24%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 34%);
+}
+
+.variant-text-top-left::before {
+  background:
+    radial-gradient(circle at 18% 20%, color-mix(in srgb, var(--color-text) 50%, transparent), transparent 42%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 38%, transparent), transparent 36%);
+}
+
+.variant-text-two-line::before {
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--color-text) 60%, transparent) 0%, transparent 50%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 38%, transparent), transparent 38%);
+}
+
+.variant-text-outline-ghost::before {
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 60%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 50%, transparent), transparent 42%);
+}
+
+.variant-feathered-square {
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    #000 44%,
+    rgba(0, 0, 0, 0.84) 58%,
+    rgba(0, 0, 0, 0.4) 72%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle at center,
+    #000 44%,
+    rgba(0, 0, 0, 0.84) 58%,
+    rgba(0, 0, 0, 0.4) 72%,
+    transparent 100%
+  );
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.variant-feathered-square::before {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-text) 28%, transparent),
+    transparent 40%
+  );
+}
+
+.variant-rounded-corner-cut {
+  border-radius: 28px;
+  -webkit-mask-image:
+    radial-gradient(circle at 0 0, transparent 0 24px, #000 35px),
+    radial-gradient(circle at 100% 0, transparent 0 24px, #000 35px),
+    radial-gradient(circle at 0 100%, transparent 0 24px, #000 35px),
+    radial-gradient(circle at 100% 100%, transparent 0 24px, #000 35px),
+    linear-gradient(#000, #000);
+  mask-image:
+    radial-gradient(circle at 0 0, transparent 0 24px, #000 35px),
+    radial-gradient(circle at 100% 0, transparent 0 24px, #000 35px),
+    radial-gradient(circle at 0 100%, transparent 0 24px, #000 35px),
+    radial-gradient(circle at 100% 100%, transparent 0 24px, #000 35px),
+    linear-gradient(#000, #000);
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+}
+
+.variant-rounded-corner-cut::before {
+  background:
+    radial-gradient(circle at 0 0, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 32%),
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 32%),
+    radial-gradient(circle at 0 100%, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 32%),
+    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 32%);
+}
+
+.variant-diamond-corner-burn::before {
+  background:
+    linear-gradient(45deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 34%),
+    linear-gradient(225deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 34%),
+    linear-gradient(315deg, color-mix(in srgb, var(--color-text) 42%, transparent), transparent 34%),
+    radial-gradient(circle at center, transparent 32%, color-mix(in srgb, var(--color-text) 18%, transparent) 100%);
+}
+
+.variant-windowpane-edge {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 46%,
+    rgba(0, 0, 0, 0.85) 64%,
+    rgba(0, 0, 0, 0.34) 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 46%,
+    rgba(0, 0, 0, 0.85) 64%,
+    rgba(0, 0, 0, 0.34) 78%,
+    transparent 100%
+  );
+}
+
+.variant-windowpane-edge::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 48%,
+      color-mix(in srgb, var(--color-surface) 26%, transparent) 100%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 24%, transparent),
+      transparent 40%
+    );
+}
+
+.variant-inverted-corner-veil::before {
+  background:
+    radial-gradient(circle at 0 0, color-mix(in srgb, var(--color-surface) 42%, transparent), transparent 36%),
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--color-surface) 42%, transparent), transparent 36%),
+    radial-gradient(circle at 0 100%, color-mix(in srgb, var(--color-surface) 42%, transparent), transparent 36%),
+    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-surface) 42%, transparent), transparent 36%),
+    radial-gradient(circle at center, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 58%),
+    linear-gradient(to top, color-mix(in srgb, var(--color-text) 28%, transparent), transparent 42%);
+}
+
+@media (max-width: 1023px) {
+  .banner-lab-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-lab-nav {
+    position: static;
+    max-height: none;
+  }
+
+  .banner-lab-content {
+    margin-left: 0;
+  }
+
+  .banner-lab-nav ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .banner-lab-page {
+    padding: 0 1rem 0.8rem;
+  }
+
+  .banner-lab-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-lab-preview {
+    height: 250px;
+  }
+}

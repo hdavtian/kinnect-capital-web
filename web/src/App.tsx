@@ -3,6 +3,7 @@ import AppShell from "./components/layout/AppShell";
 import AboutPage from "./pages/AboutPage";
 import ArmVsFixedPage from "./pages/ArmVsFixedPage";
 import BuyHomePage from "./pages/BuyHomePage";
+import BannerExperimentPage from "./pages/BannerExperimentPage";
 import CashOutVsHelocHeloanPage from "./pages/CashOutVsHelocHeloanPage";
 import CommercialFinancingPage from "./pages/CommercialFinancingPage";
 import ContactPage from "./pages/ContactPage";
@@ -80,6 +81,10 @@ function App() {
           <Route
             path={ROUTES.ornamentPicker}
             element={<OrnamentPickerPage />}
+          />
+          <Route
+            path={ROUTES.bannerVariants}
+            element={<BannerExperimentPage />}
           />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
