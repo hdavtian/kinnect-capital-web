@@ -230,9 +230,16 @@ a:hover {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
+}
+
+.header-spacer {
+  height: 72px;
+  pointer-events: none;
 }
 
 /* ── Inner wrapper: constrains content in header/footer bands ── */
@@ -549,7 +556,7 @@ h2 {
 
 .about-page-hero {
   width: 100%;
-  height: 250px;
+  height: min(45vh, 540px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -603,12 +610,10 @@ h2 {
   background-position: center center;
 }
 
-@media (min-width: 768px) {
-  .buy-home-page .content-page-hero,
-  .commercial-financing-page .content-page-hero,
-  .refinance-page .content-page-hero {
-    height: 450px;
-  }
+.buy-home-page .content-page-hero,
+.commercial-financing-page .content-page-hero,
+.refinance-page .content-page-hero {
+  height: min(45vh, 540px);
 }
 
 .content-page-section {
@@ -791,6 +796,10 @@ h2 {
 
 /* Mobile nav */
 @media (max-width: 1023px) {
+  .header-spacer {
+    height: 64px;
+  }
+
   .header-top-inner {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -896,6 +905,10 @@ h2 {
   border-bottom: 1px solid var(--color-border);
   padding: 2rem;
   box-shadow: var(--shadow-soft);
+}
+
+.site-main section.home-page {
+  padding-top: 0;
 }
 
 /* Inner content of each section is capped at 1500px and centered */
@@ -1219,7 +1232,13 @@ h2 {
   background: var(--color-surface);
   padding: 0.65rem;
   position: sticky;
-  top: var(--tools-sidebar-stick-gap);
+  top: calc(72px + var(--tools-sidebar-stick-gap));
+}
+
+@media (max-width: 1023px) {
+  .tools-page-sidebar {
+    top: calc(64px + var(--tools-sidebar-stick-gap));
+  }
 }
 
 .tools-page-sidebar h2 {
@@ -1289,10 +1308,8 @@ h2 {
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 115%;
-  aspect-ratio: 3.2 / 1;
-  min-height: clamp(150px, 18vw, 250px);
+  background-position: center center;
+  background-size: cover;
 }
 
 .calculator-grid {
@@ -1449,11 +1466,6 @@ h2 {
 
   .content-page-section {
     padding: 0.85rem 0.9rem;
-  }
-
-  .calculator-page-hero {
-    aspect-ratio: 2.25 / 1;
-    min-height: clamp(130px, 36vw, 210px);
   }
 
   .calculator-form-grid {

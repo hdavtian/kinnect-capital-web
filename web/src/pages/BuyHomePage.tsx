@@ -17,7 +17,7 @@ function BuyHomePage() {
             <div
               className="content-page-hero"
               style={{
-                backgroundImage: `url(${assetPath("/images/home.png")})`,
+                backgroundImage: `url(${assetPath("/images/buy-a-home.avif")})`,
               }}
               role="img"
               aria-label="Buy a home planning visual placeholder"

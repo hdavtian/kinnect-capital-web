@@ -183,9 +183,7 @@ function MaskedInput({
 // ─────────────────────────────────────────────────────────────────────────────
 
 function MortgageCalculator() {
-  const headerImageSrc = assetPath(
-    "/images/calculators/headers/mortgage-calculator.png",
-  );
+  const headerImageSrc = assetPath("/images/calculators/calculators.avif");
 
   const [values, setValues] = useState<CalculatorValues>(DEFAULT_VALUES);
 
@@ -286,7 +284,7 @@ function MortgageCalculator() {
             className="calculator-page-hero"
             style={{ backgroundImage: `url(${headerImageSrc})` }}
             role="img"
-            aria-label="Mortgage calculator infographic header"
+            aria-label="Mortgage tools calculator banner"
           />
 
           <div className="calculator-grid">

@@ -17,7 +17,7 @@ function RefinancePage() {
             <div
               className="content-page-hero"
               style={{
-                backgroundImage: `url(${assetPath("/images/refinance.png")})`,
+                backgroundImage: `url(${assetPath("/images/refinance.avif")})`,
               }}
               role="img"
               aria-label="Refinance strategy visual placeholder"

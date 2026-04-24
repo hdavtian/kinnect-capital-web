@@ -13,7 +13,7 @@ function CommercialFinancingPage() {
         <div
           className="content-page-hero"
           style={{
-            backgroundImage: `url(${assetPath("/images/office-building.png")})`,
+            backgroundImage: `url(${assetPath("/images/commercial-financing.avif")})`,
           }}
           role="img"
           aria-label="Commercial financing visual placeholder"

@@ -8,7 +8,7 @@
       "Self-employed mortgages are designed to solve this problem by providing several different loan solutions.",
       "In most cases, these programs can tremendously increase the borrower's home buying power."
     ],
-    "imagePath": "/images/info-graphics/250x250/bank-statement-loan.png"
+    "imagePath": "/images/info-graphics/250x250/self-employed-mortgage-loan.avif"
   },
   {
     "id": "bank-statement",
@@ -22,7 +22,7 @@
       "Common sense approach to underwriting a business owner's financial profile",
       "Competitive interest rates"
     ],
-    "imagePath": "/images/info-graphics/250x250/bank-statement-loan.png"
+    "imagePath": "/images/info-graphics/250x250/bank-statement-loan.avif"
   },
   {
     "id": "profit-loss",
@@ -35,7 +35,7 @@
       "30 year fixed terms available",
       "Common sense approach to underwriting"
     ],
-    "imagePath": "/images/info-graphics/250x250/profit-loss-loan.png"
+    "imagePath": "/images/info-graphics/250x250/profit-loss-loan.avif"
   },
   {
     "id": "asset-based",
@@ -46,7 +46,7 @@
       "Money market accounts, CD's, checking or savings accounts.",
       "Retirement accounts such as 401K or IRA"
     ],
-    "imagePath": "/images/info-graphics/250x250/asset-based-loan.png"
+    "imagePath": "/images/info-graphics/250x250/asset-based-loan.avif"
   },
   {
     "id": "dscr",
@@ -58,7 +58,7 @@
       "Ideal for real estate investors",
       "Ideal for purchase, refinance or cash out"
     ],
-    "imagePath": "/images/info-graphics/250x250/dscr-loan.png"
+    "imagePath": "/images/info-graphics/250x250/dscr-loan.avif"
   },
   {
     "id": "heloan",
@@ -71,7 +71,7 @@
       "Qualify with 12 months bank statements or full doc",
       "Keep your low interest 1st mortgage in place"
     ],
-    "imagePath": "/images/info-graphics/250x250/heloan.png"
+    "imagePath": "/images/info-graphics/250x250/heloan.avif"
   },
   {
     "id": "heloc",
@@ -81,7 +81,7 @@
       "You can use a HELOC for large expenses, such as home renovations or college tuition.",
       "You can also use a HELOC to consolidate higher-interest rate debt on other loans, such as credit cards."
     ],
-    "imagePath": "/images/info-graphics/250x250/heloc.png"
+    "imagePath": "/images/info-graphics/250x250/heloc.avif"
   },
   {
     "id": "private-money",
@@ -93,6 +93,6 @@
       "Flexible, easy underwriting requirements",
       "Terms are typically 12-24 months"
     ],
-    "imagePath": "/images/info-graphics/250x250/private-money-loan.png"
+    "imagePath": "/images/info-graphics/250x250/private-money-loan.avif"
   }
 ]

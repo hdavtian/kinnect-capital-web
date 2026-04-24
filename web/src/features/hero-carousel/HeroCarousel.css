@@ -10,16 +10,24 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  --hero-slide-header-height: clamp(72px, 8vh, 120px);
+}
+
+.home-page .hero-carousel-wrap {
+  height: min(75vh, 900px);
 }
 
 /* Slick list + track */
+.hero-carousel-wrap .slick-slider,
 .hero-carousel-wrap .slick-list {
   width: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 .hero-carousel-wrap .slick-track {
   /* Let react-slick manage track layout; do not override with flex */
+  height: 100%;
 }
 
 /* React-slick sets inline width on slides based on container measurement.
@@ -27,11 +35,17 @@
    inline style, so slides can never be wider than the visible container. */
 .hero-carousel-wrap .slick-slide {
   max-width: 100%;
+  height: 100%;
 }
 
 .hero-carousel-wrap .slick-slide > div {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.hero-carousel-wrap .slick-slide > div > .hero-slide {
+  height: 100%;
 }
 
 /* ── Individual slide ─────────────────────────────────────────────────────── */
@@ -40,6 +54,8 @@
   display: flex !important;
   flex-direction: column;
   width: 100%;
+  height: 100%;
+  min-height: 0;
 }
 
 /* Row 1 — title band (white background, theme-driven text) */
@@ -51,6 +67,7 @@
   gap: 1.5rem;
   padding: 1.1rem 2rem;
   flex-wrap: wrap;
+  min-height: var(--hero-slide-header-height);
 }
 
 .hero-slide-title {
@@ -73,9 +90,12 @@
 
 /* Row 2 — image / content band */
 .hero-slide-body {
-  height: 600px;
-  background-size: cover;
-  background-position: center center;
+  flex: 0 0 auto;
+  height: calc(100% - var(--hero-slide-header-height));
+  min-height: 0;
+  background-size: 100% auto;
+  /* Percentage-based Y alignment for fine tuning crop position */
+  background-position: center 10%;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
@@ -139,8 +159,8 @@
 
 .hero-arrow {
   position: absolute;
-  bottom: 300px; /* half of 600px body row — centers in the image band */
-  transform: translateY(50%);
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
   background: var(--color-accent);
   border: 1px solid var(--color-accent);
@@ -216,18 +236,6 @@
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 
 @media (max-width: 1023px) {
-  .hero-slide-body {
-    height: 380px;
-  }
-
-  .hero-arrow {
-    bottom: 190px; /* half of 380px */
-  }
-
-  .hero-autoplay-toggle {
-    bottom: calc(380px - 2.25rem);
-  }
-
   .hero-slide-header {
     flex-direction: column;
     gap: 0.25rem;
@@ -247,23 +255,14 @@
 }
 
 @media (max-width: 639px) {
-  .hero-slide-body {
-    height: 300px;
-  }
-
   .hero-slide-overlay {
     padding: 1.25rem 1rem;
   }
 
   .hero-arrow {
-    bottom: 150px; /* half of 300px */
     width: 2rem;
     height: 2rem;
     font-size: 0.95rem;
-  }
-
-  .hero-autoplay-toggle {
-    bottom: calc(300px - 2.25rem);
   }
 }
 
@@ -271,7 +270,7 @@
 
 .hero-autoplay-toggle {
   position: absolute;
-  bottom: calc(600px - 2.25rem);
+  bottom: 0.9rem;
   right: 0.75rem;
   z-index: 20;
   display: flex;

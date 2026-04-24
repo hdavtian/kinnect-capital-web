@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   FaEnvelope,
   FaFacebookF,
@@ -5,7 +6,6 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { SiZillow } from "react-icons/si";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { footerContent } from "../../data/footer";
 import { ROUTES } from "../../routes";

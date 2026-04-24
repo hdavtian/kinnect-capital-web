@@ -1,5 +1,5 @@
-import { aboutSections } from "../data/siteContent";
 import AboutSidebarNav from "../components/layout/AboutSidebarNav";
+import { aboutSections } from "../data/siteContent";
 import { assetPath } from "../utils/assetPath";
 
 function AboutPage() {
@@ -13,7 +13,7 @@ function AboutPage() {
             <div
               className="about-page-hero about-page-hero--top"
               style={{
-                backgroundImage: `url(${assetPath("/images/calculators/new/about-top-b.png")})`,
+                backgroundImage: `url(${assetPath("/images/about/about.avif")})`,
               }}
               role="img"
               aria-label="About Kinnect Capital visual"
@@ -37,17 +37,6 @@ function AboutPage() {
               ) : null}
             </article>
           ))}
-
-          <figure className="page-hero-image about-page-hero-frame about-page-hero-frame--bottom">
-            <div
-              className="about-page-hero about-page-hero--bottom"
-              style={{
-                backgroundImage: `url(${assetPath("/images/calculators/new/about-bottom-b.png")})`,
-              }}
-              role="img"
-              aria-label="Kinnect Capital team and lending landscape visual"
-            />
-          </figure>
         </div>
       </div>
     </section>
